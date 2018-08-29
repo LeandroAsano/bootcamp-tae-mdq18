@@ -1,6 +1,8 @@
 package com.bootcamp.webdriver.tests;
 
+import com.bootcamp.webdriver.pages.ItemDetails;
 import com.bootcamp.webdriver.pages.home.Home;
+import com.bootcamp.webdriver.pages.results.Results;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
@@ -48,12 +50,11 @@ public class MyWebDriverTest {
   public void myTest() {
 
     // Step 1: Search for a product <- search form
-    home.topBar()
+    Results results = home.topBar()
         .search("Muebles");
 
     // Step 2: Click the first product for the search result list <- reusable component
-    List<WebElement> results = driver.findElements(By.cssSelector("div.item--stack"));
-    results.get(0).findElement(By.className("item__info-title")).click();
+    ItemDetails itemDetails = results.selectItem(1).clickItemName();
 
     // Step 3: Buy the selected product
     WebElement buyButton = driver.findElement(By.id("BidButtonTop"));
