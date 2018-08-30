@@ -27,3 +27,9 @@
 - TestNG: http://testng.org/doc/documentation-main.html
 - JUnit: https://github.com/junit-team/junit4/wiki
 3. Selenium WebDriver: https://www.seleniumhq.org/docs/03_webdriver.jsp
+
+## Day 3
+
+1. Page Objects: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
+2. Page Factory: https://github.com/SeleniumHQ/selenium/wiki/PageFactory
+3. WebDriverManager: https://github.com/bonigarcia/webdrivermanager
