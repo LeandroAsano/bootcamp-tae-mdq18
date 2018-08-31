@@ -9,5 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class Home extends BasePage {
 
+    @FindBy(id="primary-header-hotel")
+    private WebElement hotelBtn;
 
 }

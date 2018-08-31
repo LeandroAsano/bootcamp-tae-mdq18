@@ -1,7 +1,6 @@
 package com.bootcamp.mdq.page.hotel;
 
 import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.results.Results;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
