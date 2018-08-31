@@ -16,17 +16,19 @@ public abstract class CommonOperations {
     getDriver().get(url);
   }
 
-  protected void click(WebElement element) {
+  public void click(WebElement element) {
     waiting().until(elementToBeClickable(element)).click();
   }
 
-  protected void type(WebElement element, String text) {
+  public void type(WebElement element, String text) {
     waiting().until(elementToBeClickable(element)).sendKeys(text);
   }
 
   protected boolean isVisible(WebElement element) {
     return waiting().until(visibilityOf(element)).isDisplayed();
   }
+
+  protected void submit(WebElement element){element.submit();}
 
   protected boolean isEnabled(WebElement element) {
     return waiting().until(elementToBeClickable(element)).isEnabled();
