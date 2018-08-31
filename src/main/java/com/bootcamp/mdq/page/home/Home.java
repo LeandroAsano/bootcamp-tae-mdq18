@@ -7,15 +7,14 @@ import org.openqa.selenium.support.FindBy;
 
 public class Home extends BasePage {
     @FindBy(id ="all-in-hotel-header-link")
-    private WebElement HotelHeaderLink;
+    private WebElement hotelHeaderLink;
 
-    public SearchHotels clickHotel(WebElement element){
-        super.click(element);
+    public SearchHotels hotelHeaderLink(){
+        click(hotelHeaderLink);
         return new SearchHotels();
     }
 
-    public WebElement hotelHeaderLink() {
-        return HotelHeaderLink;
-    }
+
+
 
 }

@@ -1,9 +1,7 @@
 package cheapTicketsTest;
 
 import com.bootcamp.mdq.driver.DriverManager;
-import com.bootcamp.mdq.page.CommonOperations;
 import com.bootcamp.mdq.page.home.Home;
-import com.bootcamp.mdq.page.searchHotels.SearchHotels;
 import com.bootcamp.mdq.tests.BaseTestSuite;
 import org.junit.After;
 import org.junit.Before;
@@ -12,7 +10,6 @@ import org.junit.Test;
 public class CheapTicketsTest extends BaseTestSuite {
 
     private Home home;
-    private SearchHotels searchHotels;
 
     @Before
     public void setUp() {
@@ -26,12 +23,10 @@ public class CheapTicketsTest extends BaseTestSuite {
     @Test
     public void cheapTicketTest(){
 
-        //click on hotel header link
-        searchHotels = home.clickHotel(home.hotelHeaderLink());
-
-        //type on Search input hotel
-        searchHotels.type(searchHotels.searchInput(),"Miami Beach");
-
+        //click on hotel header link type Miami Beach on SearchInput
+        home.hotelHeaderLink()
+                .typeCheckIn("10/25/2018")
+                .typeLocation("Miami Beach");
 
     }
 

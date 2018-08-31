@@ -1,6 +1,7 @@
 package com.bootcamp.mdq.page.hotelDestinationResults;
 
 import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.hotelSearchResults.HotelNameResults;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,11 +14,12 @@ public class HotelDestinationResults extends BasePage {
     private WebElement goButton;
 
 
-    public WebElement searchInput() {
-        return searchInput;
+    public HotelDestinationResults searchInput(String hotel) {
+        type(searchInput,hotel);
+        return this;
     }
 
-    public WebElement goButton() {
-        return goButton;
+    public HotelNameResults goButton() {
+        return new HotelNameResults();
     }
 }

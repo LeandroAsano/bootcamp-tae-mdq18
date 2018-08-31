@@ -24,29 +24,44 @@ public class SearchHotels extends BasePage {
     private WebElement childOneAge;
 
 
-    public WebElement searchInput() {
-        return searchInput;
+    public SearchHotels checkInInput(String date) {
+        type(checkInInput,date);
+        return this;
     }
 
-    public WebElement checkInInput() {
-        return checkInInput;
+    public SearchHotels checkOutInput(String date) {
+        type(checkOutInput,date);
+        return this;
     }
 
-    public WebElement checkOutInput() {
-        return checkOutInput;
+    public SearchHotels adultsNumberInput(int position) {
+        // select position
+        return this;
     }
 
-    public WebElement adultsNumberInput() {
-        return adultsNumberInput;
+    public SearchHotels childrenNumberInput(int position) {
+        // select position
+        return this;
     }
 
-    public WebElement childrenNumberInput() {
-        return childrenNumberInput;
+    public SearchHotels childOneAge() {
+        // select position
+        return this;
     }
 
-    public WebElement childOneAge() {
-        return childOneAge;
+
+    public SearchHotels typeLocation(String location) {
+        type(searchInput,location);
+        return this;
     }
+
+    public SearchHotels typeCheckIn(String date) {
+        //clear(checkInInput);
+        type(checkInInput,date);
+        return this;
+    }
+
+
 }
 
 
