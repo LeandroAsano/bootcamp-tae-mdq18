@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 public abstract class BasePage extends CommonOperations {
 
   public BasePage() {
+    super();
     PageFactory.initElements(DriverManager.getDriver(), this);
   }
 

@@ -1,7 +1,7 @@
 Hotel headers link id = primary-header-hotel
 
 Going to input field id = hotel-destination-hlp
- - Close modal id : .autocomplete-dropdown .close.
+ - Close modal css : .autocomplete-dropdown .close.
 
 Calendar in date name = startDate
 

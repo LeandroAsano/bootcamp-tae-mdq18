@@ -29,6 +29,7 @@ public abstract class CommonOperations {
   }
 
   protected boolean isEnabled(WebElement element) {
+
     return waiting().until(elementToBeClickable(element)).isEnabled();
   }
 
