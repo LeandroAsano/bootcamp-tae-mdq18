@@ -3,6 +3,7 @@ package com.bootcamp.mdq.page;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
@@ -39,5 +40,16 @@ public abstract class CommonOperations {
         .pollingEvery(1, SECONDS);
     return webDriverWait;
   }
+
+  protected Select obtainSelector(WebElement element){
+      return new Select(element);
+  }
+
+  public void setNumerOf(WebElement x, String amount){
+    Select selector=obtainSelector(x);
+    selector.selectByValue(amount);
+  }
+
+
 
 }
