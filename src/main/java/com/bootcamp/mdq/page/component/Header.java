@@ -6,9 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class Header extends BaseComponent {
 
-    @FindBy(id = "header-container")
-    private WebElement headerContainer;
-
     @FindBy(id = "primary-header-hotel")
     private WebElement hotelHeaderButton;
 
@@ -20,6 +17,5 @@ public class Header extends BaseComponent {
         click(hotelHeaderButton);
         return new Hotels();
     }
-
 
 }
