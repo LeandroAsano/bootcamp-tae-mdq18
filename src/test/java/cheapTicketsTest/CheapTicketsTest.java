@@ -24,9 +24,7 @@ public class CheapTicketsTest extends BaseTestSuite {
     public void cheapTicketTest(){
 
         //click on hotel header link type Miami Beach on SearchInput
-        home.hotelHeaderLink()
-                .typeCheckIn("10/25/2018")
-                .typeLocation("Miami Beach");
+        home.hotelHeaderLink().typeCheckIn("10/25/2018").typeLocation("Miami Beach");
 
     }
 

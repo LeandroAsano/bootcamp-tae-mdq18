@@ -23,6 +23,8 @@ public class SearchHotels extends BasePage {
     @FindBy(id = "hotel-1-age-select-1-hp-hotel")
     private WebElement childOneAge;
 
+    public SearchHotels(){}
+
 
     public SearchHotels checkInInput(String date) {
         type(checkInInput,date);
