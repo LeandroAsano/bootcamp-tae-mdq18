@@ -1,95 +1,88 @@
 package com.bootcamp.mdq.page.pages;
 
 import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.CommonOperations;
-import com.bootcamp.mdq.page.component.BaseComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
-
-import java.util.List;
 
 public class Hotels extends BasePage {
 
-        @FindBy (id = "hotel-destination-hlp")
-        private WebElement goinTofield;
+    @FindBy(id = "hotel-destination-hlp")
+    private WebElement searchInput;
 
-        @FindBy (css = "a.close")
-        private WebElement closeDestination;
+    @FindBy(css = "footer a.close")
+    private WebElement closeDestination;
 
-        @FindBy (id= "hotel-checkin-hlp")
-        private WebElement checkInDate;
+    @FindBy(id = "hotel-checkin-hlp")
+    private WebElement checkInDate;
 
-        @FindBy (id="hotel-checkout-hlp")
-        private WebElement checkOutDate;
+    @FindBy(id = "hotel-checkout-hlp")
+    private WebElement checkOutDate;
 
-        @FindBy (id="package-rooms-hp-package")
-        private WebElement amountOfRooms;
+    @FindBy(id = "package-rooms-hp-package")
+    private WebElement amountOfRooms;
 
-        // Deberia tener el selector directamente como atributo o seguir trabajando con el webElement?
-        // Sino ttendria que llamar al DriverManage...
-        // private  Select amountOfRooms;
+    // Deberia tener el selector directamente como atributo o seguir trabajando con el webElement?
+    // Sino ttendria que llamar al DriverManage...
+    // private  Select amountOfRooms;
 
-        @FindBy (id="hotel-1-adults-hlp")
-        private WebElement amountOfAdults;
+    @FindBy(id = "hotel-1-adults-hlp")
+    private WebElement amountOfAdults;
 
-        @FindBy (id= "hotel-1-children-hlp")
-        private WebElement amountOfChilden;
+    @FindBy(id = "hotel-1-children-hlp")
+    private WebElement amountOfChilden;
 
-        @FindBy (id="hotel-1-age-select-1-hlp")
-        private WebElement child1Age;
+    @FindBy(id = "hotel-1-age-select-1-hlp")
+    private WebElement child1Age;
 
-        @FindBy(css = "[data-gcw-change-submit-text='Search']")
-        private WebElement searchButton;
+    @FindBy(css = "[data-gcw-change-submit-text='Search']")
+    private WebElement searchButton;
 
-        @FindBy(id="hero-banner")
-        private WebElement banner;
+    @FindBy(id = "hero-banner")
+    private WebElement banner;
 
-        public Hotels() {
-            super();
-        }
+    public Hotels() {
+        super();
+    }
 
-        public ResultsOfSearch clickOnSearch(){
-                click(searchButton);
-                return new ResultsOfSearch();
-        }
+    public void typeHotelName(String name) {
+        type(searchInput, name);
+    }
 
-        public WebElement getGoinTofield(){
-                return goinTofield;
-        }
+    public void clickOnBanner() {
+        click(banner);
+    }
 
-        public WebElement closeDestination(){
-                return closeDestination;
-        }
 
-        public WebElement amountOfRooms() {
-                return amountOfRooms;
-        }
+    public void setCheckInDate(String date) {
+        click(checkInDate);
+        type(checkInDate, date);
+    }
 
-        public WebElement amountOfAdults() {
-                return amountOfAdults;
-        }
+    public void setCheckOutDate(String date) {
+        click(checkOutDate);
+        type(checkOutDate, date);
+    }
 
-        public WebElement amountOfChilden() {
-                return amountOfChilden;
-        }
+    public SearchResults clickOnSearch() {
+        click(searchButton);
+        return new SearchResults();
+    }
 
-        public WebElement child1Age() {
-                return child1Age;
-        }
+    public void setAmountOfChilden(String childen) {
+        setNumerOf(amountOfChilden, childen);
+    }
 
-        public WebElement SearchButton() {
-                return searchButton;
-        }
+    public void setAmountOfRooms(String rooms) {
+        setNumerOf(amountOfRooms, rooms);
+    }
 
-        public WebElement banner(){
-                return banner;
-        }
+    public void setAmountOfAdults(String adults) {
+        setNumerOf(amountOfAdults, adults);
+    }
 
-        public WebElement checkInDate(){
-                return checkInDate;
-        }
-        public  WebElement checkOutDate(){
-                return  checkOutDate;
-        }
+    public void setChildrenAge(String age) {
+        setNumerOf(child1Age, age);
+    }
+
+
 }

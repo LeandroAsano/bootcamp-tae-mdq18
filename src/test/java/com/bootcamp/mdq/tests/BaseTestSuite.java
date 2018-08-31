@@ -8,7 +8,7 @@ import org.junit.Before;
 import static com.bootcamp.mdq.driver.DriverManager.dispose;
 import static com.bootcamp.mdq.driver.DriverManager.populateDriver;
 
-public abstract class BaseTestSuite extends CommonOperations {
+public abstract class BaseTestSuite {
 
   /**
    * Creates a new browser session.

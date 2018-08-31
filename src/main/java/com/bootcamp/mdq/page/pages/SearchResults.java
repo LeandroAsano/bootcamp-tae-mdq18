@@ -8,13 +8,49 @@ import java.util.List;
 
 public class SearchResults extends BasePage {
 
-    private NavegationBar navigationBar;
+    private NavegationBar navegationBar;
 
-    @FindBy(className = "hotel.listing")
-    private List<WebElement> hotelsList;
+    @FindBy (id ="inpHotelNameMirror")
+    private WebElement propertyNameField;
 
-    public SearchResults(NavegationBar navigationBar) {
-        navigationBar=new NavegationBar();
+    @FindBy (className ="flex-link-wrap")
+    private List<WebElement> results;
+
+    @FindBy (id="hotelNameGoBtn")
+    private WebElement goBotton;
+
+    public SearchResults() {
+        navegationBar=new NavegationBar();
     }
+
+    public HotelPage clickOnItem(int index){
+        click(results.get(index));
+
+        return new HotelPage();
+    }
+
+    public boolean isEmpthyResult(){
+        return results.isEmpty();
+    }
+
+    public void searchOnPropertyNameFild(String nameOfHotel){
+        type(propertyNameField, nameOfHotel);
+    }
+
+    public void clickOnSearchButton(){
+        click(goBotton);
+    }
+    /*
+    // <div class="fooer"
+    <a .....
+    [aria-laber="close"]
+    .clos.b2(al mismo nivel)
+    .div .
+
+            cachelooup
+    expectedConditions
+            element.getText
+    elemente getAtribute"value"*/
+
 
 }

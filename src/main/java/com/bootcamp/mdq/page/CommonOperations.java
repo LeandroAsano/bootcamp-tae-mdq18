@@ -22,7 +22,9 @@ public abstract class CommonOperations {
   }
 
   protected void type(WebElement element, String text) {
-    waiting().until(elementToBeClickable(element)).sendKeys(text);
+    WebElement e = waiting().until(elementToBeClickable(element));
+    e.clear();
+    e.sendKeys(text);
   }
 
   protected boolean isVisible(WebElement element) {
@@ -45,8 +47,8 @@ public abstract class CommonOperations {
       return new Select(element);
   }
 
-  public void setNumerOf(WebElement x, String amount){
-    Select selector=obtainSelector(x);
+  public void setNumerOf(WebElement element, String amount){
+    Select selector=obtainSelector(element);
     selector.selectByValue(amount);
   }
 
