@@ -1,21 +1,21 @@
 package com.bootcamp.mdq.page.Hotels;
 
 import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.SearchHotelsResults;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Hotels extends BasePage {
 
-    @FindBys({
-            @FindBy(css = "[data-lob = 'HOTELS']"),
-            @FindBy(id = "hotel-destination-hlp")
-    })
+    @FindBy(id = "hotel-destination-hlp")
     private WebElement destinationInput;
+
+    @FindBy(css = "[aria-label= \"Close\"]")
+    private WebElement closeSuggestionButton;
 
     @FindBy(id = "hotel-checkin-hlp")
     private WebElement checkInDateInput;
@@ -35,7 +35,7 @@ public class Hotels extends BasePage {
     @FindBy(id = "hotel-1-age-select-1-hlp")
     private WebElement child1AgeSelect;
 
-    @FindBy(css = "[data-gcw-submit-text='Search']")
+    @FindBy(css = "[data-gcw-change-submit-text=\"Search\"]")
     private WebElement searchButton;
 
     public Hotels setDestination(String destination) {
@@ -43,12 +43,18 @@ public class Hotels extends BasePage {
         return this;
     }
 
-    public Hotels setCheckinDate(Date date) {
+    public Hotels closeSuggestDestinationDropdown() {
+        click(closeSuggestionButton);
+        return this;
+    }
+
+    // use LocalDate
+    public Hotels setCheckinDate(LocalDate date) {
         setDate(checkInDateInput, date);
         return this;
     }
 
-    public Hotels setCheckoutDate(Date date) {
+    public Hotels setCheckoutDate(LocalDate date) {
         setDate(checkOutDateInput, date);
         return this;
     }

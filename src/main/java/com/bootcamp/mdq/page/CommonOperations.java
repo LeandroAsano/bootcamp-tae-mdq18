@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.page;
 
+import com.bootcamp.mdq.driver.DriverManager;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -8,13 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
 import static java.util.concurrent.TimeUnit.SECONDS;
-import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public abstract class CommonOperations {
 
@@ -28,6 +29,15 @@ public abstract class CommonOperations {
 
   protected void type(WebElement element, String text) {
     waiting().until(elementToBeClickable(element)).sendKeys(text);
+    waiting().until(or(textToBePresentInElement(element, text), textToBePresentInElementValue(element, text)));
+  }
+
+  protected void switchNewTabHandle(WebElement element) {
+    String windowHandle = getDriver().getWindowHandle();
+    click(element);
+    for(String winHandle : getDriver().getWindowHandles()){
+      getDriver().switchTo().window(winHandle);
+    }
   }
 
   protected boolean isVisible(WebElement element) {
@@ -38,15 +48,14 @@ public abstract class CommonOperations {
     return waiting().until(elementToBeClickable(element)).isEnabled();
   }
 
-  protected void setDate(WebElement element, Date date) {
-    DateFormat dateFormat = new SimpleDateFormat("mm/dd/yyyy");
-    String checkinDate = dateFormat.format(date);
-    type(element, checkinDate);
+  protected void setDate(WebElement element, LocalDate date) {
+    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    String dateString = dateFormat.format(date);
+    type(element, dateString);
   }
 
   protected void selectDropdown(WebElement element, String itemText) {
-    waiting().until(visibilityOf(element)).isDisplayed();
-    Select dropdown = new Select(element);
+    Select dropdown = new Select(waiting().until(visibilityOf(element)));
     dropdown.selectByVisibleText(itemText);
   }
 

@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 
 import static com.bootcamp.mdq.driver.DriverManager.dispose;
+import static com.bootcamp.mdq.driver.DriverManager.getDriver;
 import static com.bootcamp.mdq.driver.DriverManager.populateDriver;
 
 public abstract class BaseTestSuite {
@@ -14,6 +15,7 @@ public abstract class BaseTestSuite {
   @Before
   public void setUp() {
     populateDriver("chrome");
+    getDriver().get("https://www.cheaptickets.com/");
   }
 
   /**
