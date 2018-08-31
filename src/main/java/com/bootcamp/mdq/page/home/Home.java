@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.page.home;
 
+import com.bootcamp.mdq.driver.DriverManager;
 import com.bootcamp.mdq.page.BasePage;
 import com.bootcamp.mdq.page.component.Header;
 import com.bootcamp.mdq.page.hotels.Hotel;
@@ -15,6 +16,7 @@ public class Home extends BasePage {
 
     public Home (){
         header = new Header(headerContainer);
+        navigate("https://cheaptickets.com");
     }
 
     public Header header(){

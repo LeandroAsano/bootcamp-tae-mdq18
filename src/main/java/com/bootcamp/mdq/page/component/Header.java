@@ -5,7 +5,7 @@ import com.bootcamp.mdq.page.hotels.Hotel;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Header extends BaseComponent{
+public class Header extends BaseComponent {
 
     @FindBy(id = "primary-header-hotel")
     private WebElement hotelLink;
@@ -17,12 +17,12 @@ public class Header extends BaseComponent{
         super(container);
     }
 
-    public Hotel clickHotel(){
+    public Hotel clickHotel() {
         click(hotelLink);
         return new Hotel();
     }
 
-    public Flight clickFlight(){
+    public Flight clickFlight() {
         click(flightLink);
         return new Flight();
     }

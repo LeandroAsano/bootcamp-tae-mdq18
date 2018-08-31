@@ -1,10 +1,8 @@
 package com.bootcamp.mdq.page.hotels;
 
 import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.results.Result;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -17,26 +15,26 @@ public class Hotel extends BasePage {
     @FindBy(id = "hotel-checkin-hlp")
     private WebElement checkinDate;
 
-    @FindBy(id = "hotel-checkin-hlp")
+    @FindBy(id = "hotel-checkout-hlp")
     private WebElement checkoutDate;
 
     @FindBy(id = "hotel-rooms-hlp")
-    private Select roomsSelect;
+    private WebElement roomsSelect;
 
     @FindBy(id = "hotel-1-adults-hlp")
-    private Select adultsSelect;
+    private WebElement adultsSelect;
 
     @FindBy(id = "hotel-1-children-hlp")
-    private Select childrenSelect;
+    private WebElement childrenSelect;
 
     @FindBy(id = "hotel-1-age-select-1-hlp")
-    private Select childrenAgeSelect;
+    private WebElement childrenAgeSelect;
 
-    @FindBy(css = "[data-gcw-submit-text='Search']")
+    @FindBy(css = "[data-gcw-change-submit-text=\"Search\"]")
     private WebElement searchBtn;
 
     public Hotel destination(String destination){
-        destinationInput.sendKeys(destination);
+        type(destinationInput, destination);
         return this;
     }
 
@@ -54,33 +52,33 @@ public class Hotel extends BasePage {
     }
 
     public Hotel rooms(int rooms){
-        roomsSelect.selectByValue(String.valueOf(rooms));
+        selectByText(roomsSelect, String.valueOf(rooms));
         return this;
     }
 
     public Hotel adults(int adults){
-        adultsSelect.selectByValue(String.valueOf(adults));
+        selectByText(adultsSelect, String.valueOf(adults));
         return this;
     }
 
     public Hotel childs(int childs){
-        childrenSelect.selectByValue(String.valueOf(childs));
+        selectByText(childrenSelect, String.valueOf(childs));
         return this;
     }
 
     public Hotel childsAge(int age){
         if (age == 0) {
-            childrenAgeSelect.selectByValue("Under 1");
+            selectByText(childrenAgeSelect,"Under 1");
         }
         else {
-            childrenAgeSelect.selectByValue(String.valueOf(age));
+            selectByText(childrenAgeSelect, String.valueOf(age));
         }
         return this;
     }
 
-    public Result search(){
+    public HotelResult search(){
         click(searchBtn);
-        return new Result();
+        return new HotelResult();
     }
 
 }
