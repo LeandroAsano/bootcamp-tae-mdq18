@@ -4,8 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
-import static com.bootcamp.mdq.waits.Waits.isClickable;
-import static com.bootcamp.mdq.waits.Waits.isTextPresent;
+import static com.bootcamp.mdq.waits.Waits.*;
 
 public abstract class WebOperations {
 
@@ -30,7 +29,7 @@ public abstract class WebOperations {
    *
    * @param webElement the {@link WebElement}
    */
-  protected void clickOn(WebElement webElement) {
+  protected void click(WebElement webElement) {
     isClickable(webElement).click();
   }
 
@@ -40,9 +39,19 @@ public abstract class WebOperations {
    * @param webElement the {@link WebElement}
    * @param text       the text
    */
-  protected boolean typeOn(WebElement webElement, String text) {
+  protected boolean type(WebElement webElement, String text) {
     isClickable(webElement).sendKeys(text);
     return isTextPresent(webElement, text);
+  }
+
+  /**
+   * Gets the text from the web element.
+   *
+   * @param webElement the {@link WebElement}
+   * @return the text
+   */
+  protected String getText(WebElement webElement) {
+    return isVisible(webElement).getText();
   }
 
   /**
