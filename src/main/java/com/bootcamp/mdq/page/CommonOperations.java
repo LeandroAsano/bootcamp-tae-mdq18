@@ -25,12 +25,16 @@ public abstract class CommonOperations {
         waiting().until(or(textToBePresentInElement(element,text), textToBePresentInElementValue(element,text)));
     }
 
+    protected void waitUntilInvisibility(WebElement element){
+        waiting().until(invisibilityOf(element));
+    }
+
     protected void clear(WebElement element){
         element.clear();
     }
 
     protected String getText(WebElement element){
-        return element.getText();
+        return waiting().until(visibilityOf(element)).getText();
     }
 
     protected boolean isVisible(WebElement element) {

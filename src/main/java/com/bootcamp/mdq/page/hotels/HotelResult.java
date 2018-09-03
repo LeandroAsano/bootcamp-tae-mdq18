@@ -16,18 +16,22 @@ public class HotelResult extends BasePage {
     @FindBy(id = "hotelNameGoBtn")
     private WebElement hotelNameGoBtn;
 
+    @FindBy(id = "modalInterstitial")
+    private WebElement updatingModal;
+
     @FindBy(css = ".hotel.listing")
     private List<WebElement> hotelList;
     @FindBy(id = "hotelResultTitle")
     private WebElement hotelResultTitle;
 
-    public HotelResult serchHotelName(String name){
+    public HotelResult searchHotelName(String name){
         type(hotelNameInput, name);
         return this;
     }
 
     public HotelResult findHotel(){
         click(hotelNameGoBtn);
+        waitUntilInvisibility(updatingModal);
         return this;
     }
 

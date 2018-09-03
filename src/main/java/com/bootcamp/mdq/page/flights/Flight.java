@@ -36,32 +36,33 @@ public class Flight extends BasePage {
         return this;
     }
 
-    private Flight destination(String destination){
+    private Flight enterDestination(String destination){
         type(flighDestinationInput,destination);
         return this;
     }
 
-    private Flight checkIn(int daysAhead){
+    private Flight enterCheckIn(int daysAhead){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         type(flightDepartingInput,(LocalDate.now().plusDays(daysAhead).format(format)));
         return this;
     }
 
-    private Flight checkOut(int daysAhead){
+    private Flight enterCheckOut(int daysAhead){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         clear(flightReturningInput);
         type(flightReturningInput,(LocalDate.now().plusDays(daysAhead).format(format)));
         return this;
     }
 
-    public Flight adults(int adults){
+    public Flight selectAdults(int adults){
         selectByText(flightAdultsInput, String.valueOf(adults));
         return this;
     }
 
     public FlightResult search(){
-        click(searchBtn.get(0));
-        return new FlighResult();
+        return new FlightResult();
     }
+
+
 
 }

@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 /**
  * Created by Matias on 31/08/2018.
  */
@@ -32,12 +34,12 @@ public class HotelTest extends BaseTestSuite {
                 .childs(1)
                 .childsAge(7)
                 .search()
-                .serchHotelName("Faena Hotel Miami Beach")
+                .searchHotelName("Faena Hotel Miami Beach")
                 .findHotel();
         HotelCard hotel = result.selectHotelCard(0);
 
-        Assert.assertTrue("The number of results must be greater than 0",0 < result.getNumberOfResults());
-        Assert.assertTrue("A result card(s) must be displayed for the “Faena Hotel Miami Beach” hotel ",
+        assertTrue("The number of results must be greater than 0",0 < result.getNumberOfResults());
+        assertTrue("A result card(s) must be displayed for the “Faena Hotel Miami Beach” hotel ",
                 "Faena Hotel Miami Beach".equals(hotel.getHotelNameText()));
 
     }

@@ -9,7 +9,7 @@ public class HotelCard extends BaseComponent {
     @FindBy(css = "a.flex-link")
     private WebElement hotelNameLink;
 
-    @FindBy(css = "h3.visuallyhidden")
+    @FindBy(tagName = "h3")
     private WebElement hotelNameText;
 
     public HotelCard(WebElement container) {
