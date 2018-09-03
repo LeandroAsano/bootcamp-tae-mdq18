@@ -1,9 +1,11 @@
 package com.bootcamp.mdq.page;
+import org.openqa.selenium.*;
 
-import org.openqa.selenium.NotFoundException;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+import java.util.concurrent.TimeUnit;
 
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -18,6 +20,10 @@ public abstract class CommonOperations {
 
   protected void click(WebElement element) {
     waiting().until(elementToBeClickable(element)).click();
+  }
+
+  protected void waitPageLoad(){
+    getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
   }
 
   protected void type(WebElement element, String text) {
@@ -40,5 +46,4 @@ public abstract class CommonOperations {
         .pollingEvery(1, SECONDS);
     return webDriverWait;
   }
-
 }

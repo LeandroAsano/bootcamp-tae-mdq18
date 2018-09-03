@@ -11,7 +11,7 @@ adults selector id = hotel-1-adults-hlp (transformar en selector)
 
 child selector id = hotel-1-children-hlp
 
-child age selector id = hotel-1-children-hlp
+child age selector id = hotel-1-age-select-1-hlp
 
 search button name = [data-gcw-change-submit-text='Search']
 

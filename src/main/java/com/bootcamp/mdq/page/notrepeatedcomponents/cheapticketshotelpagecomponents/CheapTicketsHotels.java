@@ -1,9 +1,8 @@
-package com.bootcamp.mdq.page;
+package com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecomponents;
 
-import com.bootcamp.mdq.driver.DriverManager;
-import com.bootcamp.mdq.page.notrepeatedcomponents.GoingToSearchBar;
+import com.bootcamp.mdq.page.BasePage;
 
-public class CheapTicketsHotels extends BasePage{
+public class CheapTicketsHotels extends BasePage {
 
     private GoingToSearchBar goingToSearchBar;
 
@@ -15,4 +14,7 @@ public class CheapTicketsHotels extends BasePage{
     public GoingToSearchBar getGoingToSearchBar(){
         return this.goingToSearchBar;
     }
+
+
+
 }

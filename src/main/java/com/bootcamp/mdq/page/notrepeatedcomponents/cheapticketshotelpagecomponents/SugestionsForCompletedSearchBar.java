@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.page.notrepeatedcomponents;
+package com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecomponents;
 
 import com.bootcamp.mdq.page.BasePage;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class SugestionsForCompletedSearchBar extends BasePage {
 
     public void closeModal(){
         click(closeModalButton);
-        System.out.printf("");
+        System.out.println();
     }
 
 }

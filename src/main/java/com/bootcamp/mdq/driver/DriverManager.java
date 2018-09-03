@@ -2,10 +2,12 @@ package com.bootcamp.mdq.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
+import java.time.LocalDate;
 import java.util.concurrent.TimeUnit;
 
 public class DriverManager {
@@ -42,5 +44,8 @@ public class DriverManager {
   public static void dispose() {
     driver.quit();
   }
+
+
+
 
 }
