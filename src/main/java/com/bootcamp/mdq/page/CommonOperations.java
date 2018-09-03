@@ -3,6 +3,7 @@ package com.bootcamp.mdq.page;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
@@ -31,6 +32,12 @@ public abstract class CommonOperations {
   protected boolean isEnabled(WebElement element) {
     return waiting().until(elementToBeClickable(element)).isEnabled();
   }
+
+  protected void selectByText(WebElement element, String text) {select(element).selectByVisibleText(text); }
+
+  private Select select(WebElement element) { return new Select(element); }
+
+  protected String getText(WebElement element){ return element.getText(); }
 
   private WebDriverWait waiting() {
     WebDriverWait webDriverWait = new WebDriverWait(getDriver(), 30);
