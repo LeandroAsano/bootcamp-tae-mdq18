@@ -1,7 +1,6 @@
-package com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelofferspagecomponents;
+package com.bootcamp.mdq.page.components.cheapticketshotelofferspagecomponents;
 
 import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecomponents.SearchButton;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,9 +12,12 @@ public class SearchHotelButton extends BasePage {
     @FindBy(id = "hotelNameGoBtn")
     private WebElement clickeable;
 
-    public void clickOn(){
+    @FindBy(id = "modalInterstitial")
+    private WebElement refresherResultsModalLoading;
+
+    public HotelCardList clickOn(){
         click(clickeable);
-        waitPageLoad();
-        int i;
+        notVisible(refresherResultsModalLoading);
+        return new HotelCardList();
     }
 }

@@ -1,7 +1,6 @@
-package com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelofferspagecomponents;
+package com.bootcamp.mdq.page.components.cheapticketshotelofferspagecomponents;
 
 import com.bootcamp.mdq.page.BasePage;
-import org.jsoup.Connection;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

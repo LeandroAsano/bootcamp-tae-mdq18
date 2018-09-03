@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOf;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public abstract class CommonOperations {
@@ -22,8 +23,8 @@ public abstract class CommonOperations {
     waiting().until(elementToBeClickable(element)).click();
   }
 
-  protected void waitPageLoad(){
-    getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+  protected void notVisible(WebElement element){
+    waiting().until(invisibilityOf(element));
   }
 
   protected void type(WebElement element, String text) {

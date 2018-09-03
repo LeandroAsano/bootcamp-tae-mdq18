@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecomponents.calendarworkflow;
+package com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents.calendarworkflow;
 
 import com.bootcamp.mdq.page.BasePage;
 import org.openqa.selenium.WebElement;

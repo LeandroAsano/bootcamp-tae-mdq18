@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecomponents;
+package com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents;
 
 import com.bootcamp.mdq.page.BasePage;
 

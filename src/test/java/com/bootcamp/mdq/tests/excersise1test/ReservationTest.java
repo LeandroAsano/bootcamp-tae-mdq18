@@ -1,11 +1,10 @@
 package com.bootcamp.mdq.tests.excersise1test;
 
-import com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshomepagecomponents.CheapTicketsHome;
-import com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecomponents.comboboxworkflow.ChildsComboBox;
+import com.bootcamp.mdq.page.components.cheapticketshomepagecomponents.CheapTicketsHome;
+import com.bootcamp.mdq.page.components.cheapticketshotelofferspagecomponents.HotelCard;
 import com.bootcamp.mdq.tests.BaseTestSuite;
+import org.junit.Assert;
 import org.junit.Test;
-
-import java.time.LocalDate;
 
 public class ReservationTest extends BaseTestSuite {
 
@@ -13,13 +12,12 @@ public class ReservationTest extends BaseTestSuite {
 
     @Test
     public void reservationTest(){
-
         cheapTicketsHome = new CheapTicketsHome();
-        cheapTicketsHome
+        HotelCard hotelCard = cheapTicketsHome
                 .initHotelReservationTest().
-                getGoingToSearchBar().
-                enterDestinyCity("Miami Beach")
-                .calendar(2018,10,15,20)
+                        getGoingToSearchBar().
+                        enterDestinyCity("Miami Beach")
+                .calendar(2018, 10, 10, 20)
                 .setCheckInDate()
                 .adultsComboBoxSelector("4")
                 .childsComboBoxSelector("1")
@@ -27,7 +25,10 @@ public class ReservationTest extends BaseTestSuite {
                 .clickOn()
                 .useSearchBar()
                 .search("Faena Hotel Miami Beach")
-                .clickOn();
+                .clickOn()
+                .getSpecificHotel("Faena Hotel Miami Beach");
+
+        Assert.assertEquals("Faena Hotel Miami Beach",hotelCard.getName());
 
     }
 
@@ -41,8 +42,8 @@ public class ReservationTest extends BaseTestSuite {
                 .calendar(2018,10,15,20)
                 .setCheckInDate()
                 .adultsComboBoxSelector2("1")
-                .clickOn2()
-                .getFirstHotel();;
+                .clickOn2();
+             /*   .getFirstHotel();*/
     }
 
 }
