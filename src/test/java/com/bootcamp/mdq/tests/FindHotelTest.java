@@ -5,6 +5,7 @@ import com.bootcamp.mdq.page.SearchHotelsResults;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
 
 import java.time.LocalDate;
 
@@ -26,7 +27,11 @@ public class FindHotelTest extends BaseTestSuite {
                 .findHotels()
                 .setDestination("Miami Beach")
                 .closeSuggestDestinationDropdown()
-                .setCheckinDate(checkInDate)
+                .setChekinByCalendar()
+                .selectMonth(11)
+                .selectDay(23)
+                .setCheckoutByCalendar()
+                .selectDay(26)
                 .selectNumberAdults("4")
                 .selectNumberChildrens("1")
                 .selectChildAge("7")
@@ -34,7 +39,7 @@ public class FindHotelTest extends BaseTestSuite {
                 .filterHotelByName("Faena Hotel Miami Beach")
                 .applyNameFilter();
 
-        Assert.assertTrue(results.getResults().size() != 0);
-        Assert.assertTrue(results.ge);
+        Assert.assertTrue(results.getResults().size() > 0);
+
     }
 }

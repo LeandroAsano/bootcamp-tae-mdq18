@@ -2,12 +2,11 @@ package com.bootcamp.mdq.page.Hotels;
 
 import com.bootcamp.mdq.page.BasePage;
 import com.bootcamp.mdq.page.SearchHotelsResults;
+import com.bootcamp.mdq.page.component.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Hotels extends BasePage {
 
@@ -23,6 +22,9 @@ public class Hotels extends BasePage {
     @FindBy(id = "hotel-checkout-hlp")
     private WebElement checkOutDateInput;
 
+    @FindBy(className = "datepicker-cal")
+    private WebElement datePickerContainer;
+
     @FindBy(id = "hotel-rooms-hlp")
     private WebElement roomsSelect;
 
@@ -37,6 +39,12 @@ public class Hotels extends BasePage {
 
     @FindBy(css = "[data-gcw-change-submit-text=\"Search\"]")
     private WebElement searchButton;
+
+    private DatePicker datePicker;
+
+    public Hotels() {
+        this.datePicker = new DatePicker(datePickerContainer);
+    }
 
     public Hotels setDestination(String destination) {
         type(destinationInput, destination);
@@ -54,9 +62,19 @@ public class Hotels extends BasePage {
         return this;
     }
 
+    public DatePicker setChekinByCalendar() {
+        click(checkInDateInput);
+        return datePicker;
+    }
+
     public Hotels setCheckoutDate(LocalDate date) {
         setDate(checkOutDateInput, date);
         return this;
+    }
+
+    public DatePicker setCheckoutByCalendar() {
+        click(checkOutDateInput);
+        return datePicker;
     }
 
     public Hotels selectNumberRooms(String value) {

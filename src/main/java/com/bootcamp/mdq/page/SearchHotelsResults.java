@@ -18,7 +18,7 @@ public class SearchHotelsResults extends BasePage {
     @FindBy(className = "section-header-main")
     private WebElement resultsNumber;
 
-    @FindBy(id = "resultsContainer")
+    @FindBy(css = ".hotel.listing.col")
     private List<WebElement> resultsContainer;
 
     public SearchHotelsResults filterHotelByName(String hotelName) {

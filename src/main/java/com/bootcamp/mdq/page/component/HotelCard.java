@@ -6,15 +6,15 @@ import org.openqa.selenium.support.FindBy;
 
 public class HotelCard extends BaseComponent {
 
-    @FindBy(css = "[hotel-name = Faena Hotel Miami Beach]")
-    private WebElement hotelResult;
+    @FindBy(className = "hotelTitle")
+    private WebElement hotelName;
 
     public HotelCard(WebElement container) {
         super(container);
     }
 
     public Reservation selectHotel() {
-        switchNewTabHandle(hotelResult);
+        switchNewTabHandle(hotelName);
         return new Reservation();
     }
 
