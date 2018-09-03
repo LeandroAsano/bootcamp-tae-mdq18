@@ -49,4 +49,18 @@ public class CheckHotelsFuncionalityTest extends BaseTestSuite {
 
 
 }
-}
+
+/*
+    @Test
+
+    public  void bookingTest(){
+        hotel=new HotelPage();
+
+        PayBookingPage bookingPage= hotel.clickOnItem(0);
+
+        DriverManager.getDriver().findElement(By.id("deposit-pay-now-button")).click();
+
+        Assert.assertTrue(bookingPage.paymentFormIsDisplayed());
+        Assert.assertTrue(bookingPage.paymentFormIsAviliable());
+    }*/
+    }
