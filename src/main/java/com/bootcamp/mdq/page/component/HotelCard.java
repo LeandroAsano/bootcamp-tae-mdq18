@@ -9,6 +9,9 @@ public class HotelCard extends BaseComponent {
     @FindBy(css = "a.flex-link")
     private WebElement hotelNameLink;
 
+    @FindBy(css = "h3.visuallyhidden")
+    private WebElement hotelNameText;
+
     public HotelCard(WebElement container) {
         super(container);
     }
@@ -16,5 +19,9 @@ public class HotelCard extends BaseComponent {
     public HotelDetail clickHotelName(){
         click(hotelNameLink);
         return new HotelDetail();
+    }
+
+    public String getHotelNameText(){
+        return getText(hotelNameText);
     }
 }

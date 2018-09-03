@@ -47,6 +47,7 @@ public class Hotel extends BasePage {
 
     public Hotel checkOut(int daysAhead){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        clear(checkoutDate);
         type(checkoutDate,(LocalDate.now().plusDays(daysAhead).format(format)));
         return this;
     }

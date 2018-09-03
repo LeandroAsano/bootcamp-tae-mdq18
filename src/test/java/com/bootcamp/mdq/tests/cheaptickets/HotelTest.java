@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.tests.cheaptickets;
 
+import com.bootcamp.mdq.page.component.HotelCard;
 import com.bootcamp.mdq.page.home.Home;
 import com.bootcamp.mdq.page.hotels.Hotel;
 import com.bootcamp.mdq.page.hotels.HotelResult;
@@ -33,11 +34,11 @@ public class HotelTest extends BaseTestSuite {
                 .search()
                 .serchHotelName("Faena Hotel Miami Beach")
                 .findHotel();
+        HotelCard hotel = result.selectHotelCard(0);
 
-        Assert.assertTrue(0 < result.getNumberOfResults());
-
-
-
+        Assert.assertTrue("The number of results must be greater than 0",0 < result.getNumberOfResults());
+        Assert.assertTrue("A result card(s) must be displayed for the “Faena Hotel Miami Beach” hotel ",
+                "Faena Hotel Miami Beach".equals(hotel.getHotelNameText()));
 
     }
 

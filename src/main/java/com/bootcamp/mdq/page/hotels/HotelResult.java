@@ -16,9 +16,8 @@ public class HotelResult extends BasePage {
     @FindBy(id = "hotelNameGoBtn")
     private WebElement hotelNameGoBtn;
 
-    @FindBy(id = "ResultsContainer")
-    private List<WebElement> resultsContainer;
-
+    @FindBy(css = ".hotel.listing")
+    private List<WebElement> hotelList;
     @FindBy(id = "hotelResultTitle")
     private WebElement hotelResultTitle;
 
@@ -33,15 +32,13 @@ public class HotelResult extends BasePage {
     }
 
     public HotelCard selectHotelCard(int position){
-        return new HotelCard(resultsContainer.get(position));
+        return new HotelCard(hotelList.get(position));
     }
 
     public int getNumberOfResults(){
         WebElement label = hotelResultTitle.findElement(By.className("section-header-main") );
-        System.out.println(getText(label));
         String[] arr = getText(label).split(":");
-        String[] arr2 = arr[1].split(" ");
-        System.out.println(arr2[1]);
-        return Integer.parseInt(arr2[1]);
+        arr = arr[1].split(" ");
+        return Integer.parseInt(arr[1]);
     }
 }

@@ -1,4 +1,8 @@
 package com.bootcamp.mdq.page.hotels;
 
-public class HotelDetail {
+import com.bootcamp.mdq.page.BasePage;
+
+public class HotelDetail extends BasePage{
+
+
 }

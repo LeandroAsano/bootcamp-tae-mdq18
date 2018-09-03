@@ -25,6 +25,10 @@ public abstract class CommonOperations {
         waiting().until(or(textToBePresentInElement(element,text), textToBePresentInElementValue(element,text)));
     }
 
+    protected void clear(WebElement element){
+        element.clear();
+    }
+
     protected String getText(WebElement element){
         return element.getText();
     }
