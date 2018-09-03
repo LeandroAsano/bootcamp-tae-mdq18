@@ -1,6 +1,7 @@
 package com.bootcamp.mdq.tests.excersise1test;
 
 import com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshomepagecomponents.CheapTicketsHome;
+import com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecomponents.comboboxworkflow.ChildsComboBox;
 import com.bootcamp.mdq.tests.BaseTestSuite;
 import org.junit.Test;
 
@@ -12,19 +13,6 @@ public class ReservationTest extends BaseTestSuite {
 
     @Test
     public void reservationTest(){
-
-
-
-       /* LocalDate birthDate = LocalDate.of(
-                Integer.parseInt("1990"),
-                Integer.parseInt("12"),
-                Integer.parseInt("30"));
-
-        birthDate = birthDate.plusDays(10);
-        System.out.println("aaaaaaaaaaa" + birthDate);
-        System.out.println("aaaaaaaaaaa" + birthDate);*/
-
-
 
         cheapTicketsHome = new CheapTicketsHome();
         cheapTicketsHome
@@ -41,13 +29,20 @@ public class ReservationTest extends BaseTestSuite {
                 .search("Faena Hotel Miami Beach")
                 .clickOn();
 
+    }
 
-
-      /*  cheapTicketsHotels = new CheapTicketsHotels();
-        cheapTicketsHotels
-                .getGoingToSearchBar()
-                .enterDestinyCity("Miami Beach");*/
-
+    @Test
+    public void reservationTest2(){
+        cheapTicketsHome = new CheapTicketsHome();
+        cheapTicketsHome
+                .initHotelReservationTest().
+                getGoingToSearchBar().
+                enterDestinyCity("Medellin")
+                .calendar(2018,10,15,20)
+                .setCheckInDate()
+                .adultsComboBoxSelector2("1")
+                .clickOn2()
+                .getFirstHotel();;
     }
 
 }

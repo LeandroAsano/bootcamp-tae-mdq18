@@ -16,6 +16,6 @@ public class SearchHotelButton extends BasePage {
     public void clickOn(){
         click(clickeable);
         waitPageLoad();
-         /*return new HotelsPostFilter();*/
+        int i;
     }
 }

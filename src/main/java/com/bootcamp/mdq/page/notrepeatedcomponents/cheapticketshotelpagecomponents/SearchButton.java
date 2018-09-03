@@ -2,6 +2,7 @@ package com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelpagecompone
 
 import com.bootcamp.mdq.page.BasePage;
 import com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelofferspagecomponents.CheapTicketsHotelsOffersPage;
+import com.bootcamp.mdq.page.notrepeatedcomponents.cheapticketshotelofferspagecomponents.HotelCardList;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -16,6 +17,11 @@ public class SearchButton extends BasePage {
     public CheapTicketsHotelsOffersPage clickOn(){
         click(clickeable);
         return new CheapTicketsHotelsOffersPage();
+    }
+
+    public HotelCardList clickOn2(){
+        click(clickeable);
+        return new HotelCardList();
     }
 
 
