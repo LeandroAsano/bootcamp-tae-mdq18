@@ -55,26 +55,26 @@ public class Hotel extends BasePage {
         return this;
     }
     public Hotel rooms(int rooms){
-        selectByText(roomsSelect, String.valueOf(rooms));
+        selectByText((WebElement) roomsSelect, String.valueOf(rooms));
 
         return this;
     }
     public Hotel adults(int adults){
-        selectByText(adultsSelect, String.valueOf(adults));
+        selectByText((WebElement) adultsSelect, String.valueOf(adults));
 
         return this;
     }
     public Hotel childs(int childs){
-        selectByText(childrenSelect, String.valueOf(childs));
+        selectByText((WebElement) childrenSelect, String.valueOf(childs));
 
         return this;
     }
     public Hotel childsAge(int age){
         if (age == 0) {
-            selectByText(childrenAge,"Under 1");
+            selectByText((WebElement) childrenAge,"Under 1");
         }
         else {
-            selectByText(childrenAge, String.valueOf(age));
+            selectByText((WebElement) childrenAge, String.valueOf(age));
         }
 
         return this;

@@ -1,7 +1,6 @@
 package com.bootcamp.mdq.tests;
 
 import com.bootcamp.mdq.page.home.Home;
-
 import com.bootcamp.mdq.page.results.ResultsSearchHotel;
 import org.junit.Assert;
 import org.junit.Test;
