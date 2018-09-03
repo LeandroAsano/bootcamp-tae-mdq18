@@ -1,6 +1,7 @@
 package com.bootcamp.mdq.page;
 
 import com.bootcamp.mdq.page.component.HotelCard;
+import com.bootcamp.mdq.page.component.RoomCard;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -19,7 +20,7 @@ public class SearchHotelsResults extends BasePage {
     private WebElement resultsNumber;
 
     @FindBy(css = ".hotel.listing.col")
-    private List<WebElement> resultsContainer;
+    private List<RoomCard> resultsContainer;
 
     public SearchHotelsResults filterHotelByName(String hotelName) {
         type(filterHotelNameInput, hotelName);
@@ -31,8 +32,12 @@ public class SearchHotelsResults extends BasePage {
         return this;
     }
 
-    public List<WebElement> getResults() {
+    public List<RoomCard> getResults() {
         return resultsContainer;
+    }
+
+    public RoomCard getSingleResult(int id) {
+        return getResults().get(id);
     }
 
 }

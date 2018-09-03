@@ -18,4 +18,8 @@ public class HotelCard extends BaseComponent {
         return new Reservation();
     }
 
+    public String getHotelName() {
+        return hotelName.getText();
+    }
+
 }
