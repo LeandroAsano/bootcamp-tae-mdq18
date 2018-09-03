@@ -1,6 +1,7 @@
 package com.bootcamp.mdq.page.pages;
 
 import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.component.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -40,27 +41,56 @@ public class Hotels extends BasePage {
     @FindBy(id = "hero-banner")
     private WebElement banner;
 
+    @FindBy(css = "[aria-label= \"Close\"]")
+    private WebElement closeSuggestionButton;
+
     public Hotels() {
         super();
     }
 
-    public void typeHotelName(String name) {
+
+    public Hotels typeHotelName(String name) {
         type(searchInput, name);
+        return this;
     }
 
-    public void clickOnBanner() {
-        click(banner);
+    public Hotels closeSuggestion() {
+        click(closeSuggestionButton);
+        return this;
     }
 
 
-    public void setCheckInDate(String date) {
+    public Hotels setCheckInDate(String date) {
         click(checkInDate);
         type(checkInDate, date);
+        return this;
     }
 
-    public void setCheckOutDate(String date) {
+    public Hotels setCheckOutDate(String date) {
         click(checkOutDate);
         type(checkOutDate, date);
+        return  this;
+    }
+
+
+    public DatePicker clickOnCheckIn(){
+        click(checkInDate);
+        checkInDate.clear();
+        return new DatePicker();
+    }
+
+    public DatePicker clickOnCheckOut(){
+        click(checkOutDate);
+        checkOutDate.clear();
+        return new DatePicker();
+    }
+
+    public Hotels pickAdate(){
+        DatePicker aux=clickOnCheckIn();
+        aux.clickOnAValidDateOnTheCalendar(5);
+        aux= clickOnCheckOut();
+        aux.clickOnAValidDateOnTheCalendar(15);
+        return this;
     }
 
     public SearchResults clickOnSearch() {
@@ -68,20 +98,24 @@ public class Hotels extends BasePage {
         return new SearchResults();
     }
 
-    public void setAmountOfChilden(String childen) {
+    public Hotels setAmountOfChilden(String childen) {
         setNumerOf(amountOfChilden, childen);
+        return this;
     }
 
-    public void setAmountOfRooms(String rooms) {
+    public Hotels setAmountOfRooms(String rooms) {
         setNumerOf(amountOfRooms, rooms);
+        return this;
     }
 
-    public void setAmountOfAdults(String adults) {
+    public Hotels setAmountOfAdults(String adults) {
         setNumerOf(amountOfAdults, adults);
+        return this;
     }
 
-    public void setChildrenAge(String age) {
+    public Hotels setChildrenAge(String age) {
         setNumerOf(child1Age, age);
+        return this;
     }
 
 

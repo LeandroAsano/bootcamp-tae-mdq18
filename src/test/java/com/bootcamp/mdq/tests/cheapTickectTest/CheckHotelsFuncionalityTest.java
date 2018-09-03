@@ -1,69 +1,52 @@
 package com.bootcamp.mdq.tests.cheapTickectTest;
 
 import com.bootcamp.mdq.page.pages.Home;
+import com.bootcamp.mdq.page.pages.HotelPage;
 import com.bootcamp.mdq.page.pages.Hotels;
 import com.bootcamp.mdq.page.pages.SearchResults;
 import com.bootcamp.mdq.tests.BaseTestSuite;
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.support.ui.Wait;
+
+import javax.jws.soap.SOAPBinding;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 public class CheckHotelsFuncionalityTest extends BaseTestSuite {
 
     private Home home;
+
 
     @Test
     public void goingToHotelsPageTest(){
 
         home=new Home();
 
-        Hotels hotel=home.navegationBar().clickOnHotel();
-        hotel.typeHotelName("Miami Beach");
-        hotel.clickOnBanner();
-        hotel.setAmountOfAdults("4");
-        hotel.setCheckInDate("09/18/2018");
-        //hotel.setCheckOutDate("09/28/2018");
-        hotel.setAmountOfChilden("1");
-        hotel.setChildrenAge("7");
-        SearchResults resultPage= hotel.clickOnSearch();
+        SearchResults searchResults=home.navegationBar()
+                .clickOnHotel()
+                .typeHotelName("Miami Beach")
+                .closeSuggestion()
+                .pickAdate()
+                .setAmountOfAdults("4")
+                .setAmountOfChilden("1")
+                .setChildrenAge("7")
+                .clickOnSearch()
+                .filterByNameFild("Faena Hotel Miami Beach")
+                .clickOnSearchButton()
+                ;
 
-        resultPage.searchOnPropertyNameFild("Faena Miami Beach");
+        //Check the number of results is not empty.
+        Assert.assertFalse(searchResults.isEmpthyResult());
 
+        //The results´s name on the list contain the name Filt
+        //Assert.assertTrue(searchResults.validResults("Faena Hotel Miami Beach"));
 
-        resultPage.clickOnSearchButton();
-
-        resultPage.clickOnItem(0);
-//        Assert.assertTrue(resultPage.isEmpthyResult());
-
-
-
-
-
+        //HotelPage x=results.clickOnItem(0);
 
 
-
-      //  type(res.getPropertyNameField(), "Faena Hotel Miami beach");
-        //HotelPage hs= res.clickOnItem(1);
-
-
-    }
-/*
-    @Test
-    public boolean validateNameOnTheResultsLista(List<WebElement> list, String propertyName){
-        boolean control=true;
-        //for( WebElement x : list && control==true) {
-           // propertyName.matches()
-          // propertyName.(((HotelCard) x).getHotelName());
-       //}
-       return control;
-    }*/
-
-
-
-
-
-
-
-
-
-
+}
 }
