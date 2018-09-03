@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.page.pages;
+package com.bootcamp.mdq.pages;
 
 import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.component.DatePicker;
+import com.bootcamp.mdq.pages.components.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

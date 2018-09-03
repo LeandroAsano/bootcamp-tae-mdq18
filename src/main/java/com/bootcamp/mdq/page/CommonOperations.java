@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
 import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOf;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public abstract class CommonOperations {
@@ -27,6 +28,14 @@ public abstract class CommonOperations {
     e.sendKeys(text);
   }
 
+  protected String getText(WebElement element){
+    return waiting().until(visibilityOf(element)).getText();
+  }
+
+  protected void notVisible(WebElement element){
+    waiting().until(invisibilityOf(element));
+  }
+
   protected boolean isVisible(WebElement element) {
     return waiting().until(visibilityOf(element)).isDisplayed();
   }
@@ -42,6 +51,8 @@ public abstract class CommonOperations {
         .pollingEvery(1, SECONDS);
     return webDriverWait;
   }
+
+
 
   protected Select obtainSelector(WebElement element){
       return new Select(element);

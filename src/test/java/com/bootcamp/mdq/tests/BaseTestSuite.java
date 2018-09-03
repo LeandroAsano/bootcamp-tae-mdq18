@@ -1,7 +1,5 @@
 package com.bootcamp.mdq.tests;
 
-import com.bootcamp.mdq.driver.DriverManager;
-import com.bootcamp.mdq.page.CommonOperations;
 import org.junit.After;
 import org.junit.Before;
 
