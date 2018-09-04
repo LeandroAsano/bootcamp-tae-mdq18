@@ -1,6 +1,6 @@
 package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.component.BaseComponent;
+import com.bootcamp.mdq.page.web.WebComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 /**
  * Created by Matias on 30/08/2018.
  */
-public class DatePicker extends BaseComponent {
+public class DatePicker extends WebComponent {
 
     @FindBy(css = "datepicker-next")
     private WebElement nextMonthBtn;

@@ -1,12 +1,12 @@
 package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.component.BaseComponent;
+import com.bootcamp.mdq.page.web.WebComponent;
 import com.bootcamp.mdq.pages.flights.Flight;
 import com.bootcamp.mdq.pages.hotels.Hotel;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Header extends BaseComponent {
+public class Header extends WebComponent {
 
     @FindBy(id = "primary-header-hotel")
     private WebElement hotelLink;

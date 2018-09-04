@@ -1,13 +1,16 @@
 package com.bootcamp.mdq.pages.hotels;
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Hotel extends BasePage {
+import static com.bootcamp.mdq.waits.Waits.*;
+
+public class Hotel extends WebPage {
 
     @FindBy(id = "hotel-destination-hlp")
     private WebElement destinationInput;
@@ -47,7 +50,6 @@ public class Hotel extends BasePage {
 
     public Hotel checkOut(int daysAhead){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        clear(checkoutDate);
         type(checkoutDate,(LocalDate.now().plusDays(daysAhead).format(format)));
         return this;
     }

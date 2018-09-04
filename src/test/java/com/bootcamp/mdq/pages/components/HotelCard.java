@@ -1,11 +1,11 @@
 package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.component.BaseComponent;
+import com.bootcamp.mdq.page.web.WebComponent;
 import com.bootcamp.mdq.pages.hotels.HotelDetail;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HotelCard extends BaseComponent {
+public class HotelCard extends WebComponent {
 
     @FindBy(css = "a.flex-link")
     private WebElement hotelNameLink;

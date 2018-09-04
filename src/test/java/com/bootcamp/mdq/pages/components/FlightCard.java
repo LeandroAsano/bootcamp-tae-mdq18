@@ -1,6 +1,6 @@
 package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.component.BaseComponent;
+import com.bootcamp.mdq.page.web.WebComponent;
 import com.bootcamp.mdq.pages.flights.FlightResult;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Matias on 03/09/2018.
  */
-public class FlightCard extends BaseComponent {
+public class FlightCard extends WebComponent {
 
     @FindBy(css = "button.btn-secondary.btn-action.t-select-btn")
     private WebElement selectBtn;

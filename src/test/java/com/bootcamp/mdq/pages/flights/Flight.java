@@ -1,6 +1,6 @@
 package com.bootcamp.mdq.pages.flights;
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.pages.components.FlightSearchForm;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Matias on 04/09/2018.
  */
-public class Flight extends BasePage {
+public class Flight extends WebPage {
 
     @FindBy(id = "gcw-flights-form-flp")
     private WebElement flightSearchForm;

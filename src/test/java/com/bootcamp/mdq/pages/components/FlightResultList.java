@@ -1,6 +1,6 @@
 package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.component.BaseComponent;
+import com.bootcamp.mdq.page.web.WebComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by Matias on 03/09/2018.
  */
-public class FlightResultList extends BaseComponent {
+public class FlightResultList extends WebComponent {
 
     @FindBy(css = "li.flight-module")
     private List<WebElement> flightCardList;

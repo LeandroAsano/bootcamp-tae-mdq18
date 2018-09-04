@@ -1,11 +1,11 @@
 package com.bootcamp.mdq.pages.home;
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.pages.components.Header;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Home extends BasePage {
+public class Home extends WebPage {
 
     @FindBy(id = "header-container")
     private WebElement headerContainer;
@@ -14,7 +14,6 @@ public class Home extends BasePage {
 
     public Home (){
         header = new Header(headerContainer);
-        navigate("https://cheaptickets.com");
     }
 
     public Header header(){

@@ -1,6 +1,6 @@
 package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.component.BaseComponent;
+import com.bootcamp.mdq.page.web.WebComponent;
 import com.bootcamp.mdq.pages.flights.FlightResult;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by Matias on 30/08/2018.
  */
-public class FlightSearchForm extends BaseComponent {
+public class FlightSearchForm extends WebComponent {
 
     @FindBy(id = "flight-origin-flp")
     private WebElement flightOriginInput;
@@ -54,7 +54,6 @@ public class FlightSearchForm extends BaseComponent {
 
     public FlightSearchForm enterCheckOut(int daysAhead){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        clear(flightReturningInput);
         type(flightReturningInput,(LocalDate.now().plusDays(daysAhead).format(format)));
         return this;
     }

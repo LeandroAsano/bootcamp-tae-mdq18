@@ -1,14 +1,15 @@
 package com.bootcamp.mdq.pages.hotels;
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.pages.components.HotelCard;
+import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class HotelResult extends BasePage {
+public class HotelResult extends WebPage {
 
     @FindBy(id = "inpHotelNameMirror")
     private WebElement hotelNameInput;
@@ -32,7 +33,7 @@ public class HotelResult extends BasePage {
 
     public HotelResult findHotel(){
         click(hotelNameGoBtn);
-        waitUntilInvisibility(updatingModal);
+        Waits.waitUntilInivisible(updatingModal);
         return this;
     }
 

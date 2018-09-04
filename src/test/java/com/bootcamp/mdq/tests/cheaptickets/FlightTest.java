@@ -2,7 +2,7 @@ package com.bootcamp.mdq.tests.cheaptickets;
 
 import com.bootcamp.mdq.pages.flights.FlightResult;
 import com.bootcamp.mdq.pages.home.Home;
-import com.bootcamp.mdq.tests.BaseTestSuite;
+import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
