@@ -3,6 +3,7 @@ package com.bootcamp.mdq.page;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
@@ -11,6 +12,11 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClick
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public abstract class CommonOperations {
+
+  protected void select(WebElement webElement , int index){
+    Select select = new Select(webElement);
+    select.selectByIndex(index);
+  }
 
   protected void navigate(String url) {
     getDriver().get(url);
