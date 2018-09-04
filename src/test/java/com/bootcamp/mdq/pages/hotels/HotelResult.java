@@ -9,6 +9,8 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+import static com.bootcamp.mdq.waits.Waits.waitUntilInivisible;
+
 public class HotelResult extends WebPage {
 
     @FindBy(id = "inpHotelNameMirror")
@@ -33,7 +35,7 @@ public class HotelResult extends WebPage {
 
     public HotelResult findHotel(){
         click(hotelNameGoBtn);
-        Waits.waitUntilInivisible(updatingModal);
+        waitUntilInivisible(updatingModal);
         return this;
     }
 

@@ -5,6 +5,8 @@ import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.bootcamp.mdq.waits.Waits.isVisible;
+
 /**
  * Created by Matias on 04/09/2018.
  */
@@ -17,7 +19,7 @@ public class HotelSellModal extends WebComponent {
         super(container);
     }
 
-    public boolean visibleNoThanksLink(){
-        return false;
+    public boolean isNoThanksLinkVisible(){
+        return isVisible(noThanksLink).isDisplayed();
     }
 }

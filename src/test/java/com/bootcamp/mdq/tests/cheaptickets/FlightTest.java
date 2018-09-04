@@ -3,9 +3,10 @@ package com.bootcamp.mdq.tests.cheaptickets;
 import com.bootcamp.mdq.pages.flights.FlightResult;
 import com.bootcamp.mdq.pages.home.Home;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Matias on 31/08/2018.
@@ -24,8 +25,8 @@ public class FlightTest extends BaseTestSuite {
         FlightResult result = home.header().clickFlight().searchFlight()
                 .enterOrigin("LAS")
                 .enterDestination("LAX")
-                .enterCheckIn(3)
-                .enterCheckOut(15)
+                .enterCheckIn().setDate(3)
+                .enterCheckOut().setDate(10)
                 .selectAdults(1)
                 .search()
                 .getResultList()
@@ -36,7 +37,7 @@ public class FlightTest extends BaseTestSuite {
                 .selectCard(0)
                 .selectFlight();
 
-        Assert.assertTrue(result.hotelSellModal().visibleNoThanksLink());
+        assertTrue(result.hotelSellModal().isNoThanksLinkVisible());
 
 
     }

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 /**
@@ -26,7 +27,9 @@ public class DatePicker extends WebComponent {
         super(container);
     }
 
-    public void setDate(String date){
+    public void setDate(int daysAhead){
+        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        String date = LocalDate.now().plusDays(daysAhead).format(format);
         String[]arr = date.split("/");
         day = Integer.parseInt(arr[0]);
         month = Integer.parseInt(arr[1]);

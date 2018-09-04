@@ -32,6 +32,12 @@ public class FlightSearchForm extends WebComponent {
     @FindBy(css = "button.btn-primary.btn-action.gcw-submit")
      private WebElement searchBtn;
 
+    @FindBy(id = "flight-departing-wrapper-flp")
+    private WebElement flightDepartingCalendar;
+
+    @FindBy(id = "flight-returning-wrapper-flp")
+    private WebElement flightReturningCalendar;
+
     public FlightSearchForm(WebElement container) {
         super(container);
     }
@@ -46,16 +52,14 @@ public class FlightSearchForm extends WebComponent {
         return this;
     }
 
-    public FlightSearchForm enterCheckIn(int daysAhead){
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        type(flightDepartingInput,(LocalDate.now().plusDays(daysAhead).format(format)));
-        return this;
+    public DatePicker enterCheckIn(){
+        click(flightDepartingInput);
+        return new DatePicker(flightDepartingCalendar);
     }
 
-    public FlightSearchForm enterCheckOut(int daysAhead){
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        type(flightReturningInput,(LocalDate.now().plusDays(daysAhead).format(format)));
-        return this;
+    public DatePicker enterCheckOut(){
+        click(flightReturningInput);
+        return new DatePicker(flightReturningCalendar);
     }
 
     public FlightSearchForm selectAdults(int adults){

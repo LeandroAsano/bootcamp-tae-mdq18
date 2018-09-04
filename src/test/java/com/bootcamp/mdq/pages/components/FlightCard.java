@@ -2,8 +2,11 @@ package com.bootcamp.mdq.pages.components;
 
 import com.bootcamp.mdq.page.web.WebComponent;
 import com.bootcamp.mdq.pages.flights.FlightResult;
+import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import static com.bootcamp.mdq.waits.Waits.*;
 
 /**
  * Created by Matias on 03/09/2018.
@@ -11,21 +14,35 @@ import org.openqa.selenium.support.FindBy;
 public class FlightCard extends WebComponent {
 
     @FindBy(css = "button.btn-secondary.btn-action.t-select-btn")
-    private WebElement selectBtn;
+    private WebElement selectButton;
 
     @FindBy(css = "[data-test-id=\"airline-name\"]")
     private WebElement airlineNameSpan;
 
     @FindBy(css = "[data-test-id=\"select-button\"]")
-    private WebElement selectThisBtn;
+    private WebElement selectThisFareButton;
+
+    @FindBy(id = "xSellHotelForcedChoice")
+    private WebElement hotelSellModal;
 
     public FlightCard(WebElement container) {
         super(container);
     }
 
     public FlightResult selectFlight(){
-        click(selectBtn);
+        click(selectButton);
+        if(isVisible(selectThisFareButton).isDisplayed()){
+            click(selectThisFareButton);
+        }
         return new FlightResult();
+    }
+
+    public HotelSellModal selectReturnFlight(){
+        click(selectThisFareButton);
+        if(isVisible(selectThisFareButton).isDisplayed()){
+            click(selectThisFareButton);
+        }
+        return new HotelSellModal(hotelSellModal);
     }
 
     public String getAirlineName(){

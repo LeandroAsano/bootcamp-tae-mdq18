@@ -7,6 +7,8 @@ import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static com.bootcamp.mdq.waits.Waits.waitUntilInivisible;
+
 
 /**
  * Created by Matias on 03/09/2018.
@@ -26,7 +28,7 @@ public class FlightResult extends WebPage {
     private WebElement hotelSellModal;
 
     public FlightResultList getResultList(){
-        Waits.waitUntilInivisible(loadingBar);
+        waitUntilInivisible(loadingBar);
         return new FlightResultList(flightList);
     }
 

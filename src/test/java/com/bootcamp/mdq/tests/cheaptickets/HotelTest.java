@@ -7,6 +7,7 @@ import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -37,8 +38,7 @@ public class HotelTest extends BaseTestSuite {
         HotelCard hotel = result.selectHotelCard(0);
 
         assertTrue("The number of results must be greater than 0",0 < result.getNumberOfResults());
-        assertTrue("A result card(s) must be displayed for the “Faena Hotel Miami Beach” hotel ",
-                "Faena Hotel Miami Beach".equals(hotel.getHotelNameText()));
+        assertEquals("Faena Hotel Miami Beach",hotel.getHotelNameText());
 
     }
 
