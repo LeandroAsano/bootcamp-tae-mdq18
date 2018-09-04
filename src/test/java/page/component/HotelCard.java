@@ -1,10 +1,11 @@
-package com.bootcamp.mdq.page.component;
+package page.component;
 
-import com.bootcamp.mdq.page.Reservation;
+import com.bootcamp.mdq.page.web.WebComponent;
+import page.Reservation;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HotelCard extends BaseComponent {
+public class HotelCard extends WebComponent {
 
     @FindBy(className = "hotelTitle")
     private WebElement hotelName;

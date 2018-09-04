@@ -1,15 +1,14 @@
-package com.bootcamp.mdq.page.Hotels;
+package page.Hotels;
 
-import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.SearchHotelsResults;
-import com.bootcamp.mdq.page.component.DatePicker;
+import com.bootcamp.mdq.page.web.WebPage;
+import page.SearchHotelsResults;
+import page.component.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.time.LocalDate;
-import java.util.List;
 
-public class Hotels extends BasePage {
+public class Hotels extends WebPage {
 
     @FindBy(id = "hotel-destination-hlp")
     private WebElement destinationInput;
@@ -57,20 +56,9 @@ public class Hotels extends BasePage {
         return this;
     }
 
-    // use LocalDate
-    public Hotels setCheckinDate(LocalDate date) {
-        setDate(checkInDateInput, date);
-        return this;
-    }
-
     public DatePicker setChekinByCalendar() {
         click(checkInDateInput);
         return datePicker;
-    }
-
-    public Hotels setCheckoutDate(LocalDate date) {
-        setDate(checkOutDateInput, date);
-        return this;
     }
 
     public DatePicker setCheckoutByCalendar() {

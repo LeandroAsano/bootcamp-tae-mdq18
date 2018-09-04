@@ -1,11 +1,11 @@
 package com.bootcamp.mdq.tests;
 
-import com.bootcamp.mdq.page.Home.Home;
-import com.bootcamp.mdq.page.SearchHotelsResults;
+import com.bootcamp.mdq.testsuite.BaseTestSuite;
+import page.Home.Home;
+import page.SearchHotelsResults;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 
 import java.time.LocalDate;
 

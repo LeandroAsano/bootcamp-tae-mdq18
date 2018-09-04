@@ -1,11 +1,11 @@
-package com.bootcamp.mdq.page.Home;
+package page.Home;
 
-import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.component.Header;
+import com.bootcamp.mdq.page.web.WebPage;
+import page.component.Header;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Home extends BasePage {
+public class Home extends WebPage {
 
     @FindBy(id = "header-container")
     private WebElement headerContainer;

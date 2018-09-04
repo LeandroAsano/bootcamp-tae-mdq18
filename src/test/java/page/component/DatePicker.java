@@ -1,13 +1,14 @@
-package com.bootcamp.mdq.page.component;
+package page.component;
 
-import com.bootcamp.mdq.page.Hotels.Hotels;
+import com.bootcamp.mdq.page.web.WebComponent;
+import page.Hotels.Hotels;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class DatePicker extends BaseComponent {
+public class DatePicker extends WebComponent {
 
     @FindBy(className = "datepicker-next")
     private WebElement nextMonthButton;

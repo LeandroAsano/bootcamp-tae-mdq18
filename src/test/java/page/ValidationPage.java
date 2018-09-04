@@ -1,9 +1,10 @@
-package com.bootcamp.mdq.page;
+package page;
 
+import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ValidationPage extends BasePage{
+public class ValidationPage extends WebPage {
 
     @FindBy(className = ".text.billing-cardholder-name")
     private WebElement cardHolderNameInput;
@@ -23,28 +24,28 @@ public class ValidationPage extends BasePage{
     @FindBy(className = ".text.cko-field.fast-payment-include.pwp-insurance-zipcode")
     private WebElement billingZipCodeInput;
 
-    public boolean isVisibleCardHolderNameInput() {
-        return isVisible(cardHolderNameInput);
+    public boolean isDisplayedCardHolderNameInput() {
+        return isDisplayed(cardHolderNameInput);
     }
 
-    public boolean isVisibleCreditCardInput() {
-        return isVisible(creditCardInput);
+    public boolean isDisplayedCreditCardInput() {
+        return isDisplayed(creditCardInput);
     }
 
-    public boolean isVisibleExpirationDateMonthSelect() {
-        return isVisible(expirationDateMonthSelect);
+    public boolean isDisplayedExpirationDateMonthSelect() {
+        return isDisplayed(expirationDateMonthSelect);
     }
 
-    public boolean isVisibleExpirationDateYearSelect() {
-        return isVisible(expirationDateYearSelect);
+    public boolean isDisplayedExpirationDateYearSelect() {
+        return isDisplayed(expirationDateYearSelect);
     }
 
-    public boolean isVisibleSecurityCodeInput() {
-        return isVisible(securityCodeInput);
+    public boolean isDisplayedSecurityCodeInput() {
+        return isDisplayed(securityCodeInput);
     }
 
-    public boolean isVisibleBillingZipCodeInput() {
-        return isVisible(billingZipCodeInput);
+    public boolean isDisplayedBillingZipCodeInput() {
+        return isDisplayed(billingZipCodeInput);
     }
 
 }

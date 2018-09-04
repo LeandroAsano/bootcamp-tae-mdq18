@@ -1,10 +1,11 @@
-package com.bootcamp.mdq.page.component;
+package page.component;
 
-import com.bootcamp.mdq.page.ValidationPage;
+import com.bootcamp.mdq.page.web.WebComponent;
+import page.ValidationPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RoomOption extends BaseComponent {
+public class RoomOption extends WebComponent {
 
     @FindBy(className = "btn-sub-action.book-button.btn-pwa")
     private WebElement reserveButton;

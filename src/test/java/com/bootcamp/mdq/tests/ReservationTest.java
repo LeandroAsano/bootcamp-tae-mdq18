@@ -1,8 +1,8 @@
 package com.bootcamp.mdq.tests;
 
-import com.bootcamp.mdq.page.Home.Home;
-import com.bootcamp.mdq.page.ValidationPage;
-import com.bootcamp.mdq.page.component.RoomCard;
+import com.bootcamp.mdq.testsuite.BaseTestSuite;
+import page.Home.Home;
+import page.ValidationPage;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,12 +33,12 @@ public class ReservationTest extends BaseTestSuite {
                 .bookRoom(0)
                 .reserveRoom();
 
-        Assert.assertTrue(valPage.isVisibleCardHolderNameInput());
-        Assert.assertTrue(valPage.isVisibleCreditCardInput());
-        Assert.assertTrue(valPage.isVisibleExpirationDateMonthSelect());
-        Assert.assertTrue(valPage.isVisibleExpirationDateYearSelect());
-        Assert.assertTrue(valPage.isVisibleSecurityCodeInput());
-        Assert.assertTrue(valPage.isVisibleBillingZipCodeInput());
+        Assert.assertTrue(valPage.isDisplayedCardHolderNameInput());
+        Assert.assertTrue(valPage.isDisplayedCreditCardInput());
+        Assert.assertTrue(valPage.isDisplayedExpirationDateMonthSelect());
+        Assert.assertTrue(valPage.isDisplayedExpirationDateYearSelect());
+        Assert.assertTrue(valPage.isDisplayedSecurityCodeInput());
+        Assert.assertTrue(valPage.isDisplayedBillingZipCodeInput());
 
 
     }

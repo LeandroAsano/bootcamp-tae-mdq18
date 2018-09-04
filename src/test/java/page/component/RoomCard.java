@@ -1,13 +1,13 @@
-package com.bootcamp.mdq.page.component;
+package page.component;
 
+import com.bootcamp.mdq.page.web.WebComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 
 import java.util.List;
 
-public class RoomCard extends BaseComponent {
+public class RoomCard extends WebComponent {
 
     @FindAll({
             @FindBy(className = ".rate-plan.rate-plan-first"),

@@ -1,14 +1,13 @@
-package com.bootcamp.mdq.page;
+package page;
 
-import com.bootcamp.mdq.page.component.HotelCard;
-import com.bootcamp.mdq.page.component.RoomCard;
+import com.bootcamp.mdq.page.web.WebPage;
+import page.component.RoomCard;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class SearchHotelsResults extends BasePage {
+public class SearchHotelsResults extends WebPage {
 
     @FindBy(id = "inpHotelNameMirror")
     private WebElement filterHotelNameInput;
