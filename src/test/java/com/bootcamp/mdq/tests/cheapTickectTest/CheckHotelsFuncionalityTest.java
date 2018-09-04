@@ -12,13 +12,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 
 
+
 public class CheckHotelsFuncionalityTest extends BaseTestSuite {
 
     private Home home;
 
-    private  HotelPage hotel;
-
-/*
     @Test
     public void goingToHotelsPageTest() {
 
@@ -43,25 +41,45 @@ public class CheckHotelsFuncionalityTest extends BaseTestSuite {
         Assert.assertTrue(searchResults.validResults("Faena Hotel Miami Beach"));
 
 
-
-        //HotelPage x=searchResults.clickOnItem(0);
-
-
     }
-*/
+
 
     @Test
 
     public  void bookingTest(){
 
-        hotel=new HotelPage();
+        home = new Home();
 
-        PayBookingPage bookingPage= hotel.clickOnItem(0);
+        HotelPage hotelPage = home.navegationBar()
+                .clickOnHotel()
+                .typeHotelName("Medellin")
+                .closeSuggestion()
+                .pickAdate()
+                .setAmountOfAdults("1")
+                .clickOnSearch()
+                .clickOnItemOverSearchResult(0);
+
+
+        hotelPage.changeWindow(1);
+
+        PayBookingPage payBookingPage=hotelPage.clickOnItem(0);
 
         //DriverManager.getDriver().findElement(By.id("deposit-pay-now-button")).click();
 
-        Assert.assertTrue(bookingPage.hasCardHolderName());
-        Assert.assertTrue(bookingPage.hasCreditCardNumber());
-       
+        Assert.assertTrue(payBookingPage.hasCardHolderName());
+        Assert.assertTrue(payBookingPage.hasCreditCardNumber());
+        Assert.assertTrue(payBookingPage.hasMonthSelector());
+        Assert.assertTrue(payBookingPage.hasExpirationYear());
+        Assert.assertTrue(payBookingPage.hasSecurityCode());
+        Assert.assertTrue(payBookingPage.hasZipCode());
+
+        Assert.assertTrue(payBookingPage.availableCardHolderName());
+        Assert.assertTrue(payBookingPage.availableCreditCardNumber());
+        Assert.assertTrue(payBookingPage.availableMonthSelector());
+        Assert.assertTrue(payBookingPage.availableExpirationYear());
+        Assert.assertTrue(payBookingPage.availableSecurityCode());
+        Assert.assertTrue(payBookingPage.availableZipCode());
+
     }
+
 }

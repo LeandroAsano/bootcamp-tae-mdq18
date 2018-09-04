@@ -1,10 +1,13 @@
 package com.bootcamp.mdq.page;
 
+import com.bootcamp.mdq.driver.DriverManager;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
 
 import static com.bootcamp.mdq.driver.DriverManager.getDriver;
 import static java.util.concurrent.TimeUnit.SECONDS;
@@ -47,20 +50,25 @@ public abstract class CommonOperations {
   private WebDriverWait waiting() {
     WebDriverWait webDriverWait = new WebDriverWait(getDriver(), 30);
     webDriverWait.ignoring(NotFoundException.class)
-        .ignoring(StaleElementReferenceException.class)
-        .pollingEvery(1, SECONDS);
+            .ignoring(StaleElementReferenceException.class)
+            .pollingEvery(1, SECONDS);
     return webDriverWait;
   }
 
 
 
   protected Select obtainSelector(WebElement element){
-      return new Select(element);
+    return new Select(element);
   }
 
   public void setNumerOf(WebElement element, String amount){
     Select selector=obtainSelector(element);
     selector.selectByValue(amount);
+  }
+
+  public void changeWindow(int position){
+    ArrayList<String> tabs = new ArrayList<String>(DriverManager.getDriver().getWindowHandles());
+    DriverManager.getDriver().switchTo().window(tabs.get(position));
   }
 
 

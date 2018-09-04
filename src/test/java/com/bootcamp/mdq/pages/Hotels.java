@@ -44,6 +44,8 @@ public class Hotels extends BasePage {
     @FindBy(css = "[aria-label= \"Close\"]")
     private WebElement closeSuggestionButton;
 
+
+
     public Hotels() {
         super();
     }

@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class SearchResults extends BasePage {
 
     private NavegationBar navegationBar;
@@ -31,13 +32,16 @@ public class SearchResults extends BasePage {
     @FindBy(id = "modalInterstitial")
     private WebElement updatingYourResultsModal;
 
+    @FindBy(id= "tva-module")
+    private WebElement searchingHotels;
+
     public SearchResults() {
         navegationBar = new NavegationBar();
     }
 
-    public HotelPage clickOnItem(int index) {
-        click(results.get(index));
-        return new HotelPage();
+    public HotelPage clickOnItemOverSearchResult(int index) {
+        notVisible(searchingHotels);
+        return (new HotelCard(results.get(index))).clickOnHotelName();
     }
 
     public SearchResults filterByNameFild(String nameOfHotel) {

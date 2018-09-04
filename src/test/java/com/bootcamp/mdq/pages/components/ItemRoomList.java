@@ -16,6 +16,7 @@ public class ItemRoomList extends BaseComponent {
     }
 
     public PayBookingPage clickOnReserve(){
+        isVisible(reserveButton);
         click(reserveButton);
         return new PayBookingPage();
     }

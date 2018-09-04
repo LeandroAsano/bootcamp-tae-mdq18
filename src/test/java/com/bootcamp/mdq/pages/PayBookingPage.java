@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class PayBookingPage extends BasePage {
 
+    @FindBy (id= "payments")
+    private WebElement creditCardInfoContainer;
+
     @FindBy(className = "billing-cardholder-name")
     private WebElement cardHolderName;
 
@@ -59,15 +62,9 @@ public class PayBookingPage extends BasePage {
         return this;
     }
 
-    public boolean paymentFormIsDisplayed() {
-        return cardHolderName.isDisplayed() && creditCardNumber.isDisplayed() && expirationMonth.isDisplayed() && expirationYear.isDisplayed() && securityCode.isDisplayed() && zipCode.isDisplayed();
-    }
-
-    public boolean paymentFormIsAviliable() {
-        return cardHolderName.isEnabled() && creditCardNumber.isEnabled() && expirationMonth.isEnabled() && expirationYear.isEnabled() && securityCode.isEnabled() && zipCode.isEnabled();
-    }
 
     public boolean hasCardHolderName() {
+        isVisible(creditCardInfoContainer);
         return isVisible(cardHolderName);
     }
 
@@ -91,8 +88,29 @@ public class PayBookingPage extends BasePage {
         return isVisible(zipCode);
     }
 
+    public boolean availableCardHolderName() {
+        return isEnabled(cardHolderName);
+    }
 
+    public boolean availableCreditCardNumber() {
+        return isEnabled(creditCardNumber);
+    }
 
+    public boolean availableMonthSelector() {
+        return isEnabled(expirationMonth);
+    }
+
+    public boolean availableExpirationYear() {
+        return isEnabled(expirationYear);
+    }
+
+    public boolean availableSecurityCode() {
+        return isEnabled(securityCode);
+    }
+
+    public boolean availableZipCode() {
+        return isEnabled(zipCode);
+    }
 
 }
 

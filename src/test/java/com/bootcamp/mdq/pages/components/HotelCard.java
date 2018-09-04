@@ -4,7 +4,6 @@ import com.bootcamp.mdq.page.component.BaseComponent;
 import com.bootcamp.mdq.pages.HotelPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 public class HotelCard extends BaseComponent {
 
     @FindBy(css = "article h3")
@@ -18,6 +17,7 @@ public class HotelCard extends BaseComponent {
     }
 
     public HotelPage clickOnHotelName() {
+        click(hotelLink);
         return new HotelPage();
     }
 
@@ -25,9 +25,7 @@ public class HotelCard extends BaseComponent {
         return getText(hotelName);
     }
 
-    public HotelPage clickOn() {
-        return new HotelPage();
-    }
+
 
 
 }
