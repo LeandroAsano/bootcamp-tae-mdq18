@@ -33,3 +33,8 @@
 1. Page Objects: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
 2. Page Factory: https://github.com/SeleniumHQ/selenium/wiki/PageFactory
 3. WebDriverManager: https://github.com/bonigarcia/webdrivermanager
+
+## Day 4
+
+1. Implicit & Explicit Waits: https://www.seleniumhq.org/docs/04_webdriver_advanced.jsp
+2. ExpectedConditions: https://seleniumhq.github.io/selenium/docs/api/java/org/openqa/selenium/support/ui/ExpectedConditions.html
