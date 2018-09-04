@@ -1,11 +1,9 @@
 package com.bootcamp.mdq.tests.cheaptickets;
 
-import com.bootcamp.mdq.page.component.HotelCard;
-import com.bootcamp.mdq.page.home.Home;
-import com.bootcamp.mdq.page.hotels.Hotel;
-import com.bootcamp.mdq.page.hotels.HotelResult;
+import com.bootcamp.mdq.pages.components.HotelCard;
+import com.bootcamp.mdq.pages.home.Home;
+import com.bootcamp.mdq.pages.hotels.HotelResult;
 import com.bootcamp.mdq.tests.BaseTestSuite;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,7 +22,7 @@ public class HotelTest extends BaseTestSuite {
     }
 
     @Test
-    public void hotelSearchTest(){
+    public void searchHotelTest(){
         HotelResult result = home.header().clickHotel()
                 .destination("Miami Beach")
                 .checkIn(4)

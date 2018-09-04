@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.page.hotels;
+package com.bootcamp.mdq.pages.hotels;
 
 import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.component.HotelCard;
+import com.bootcamp.mdq.pages.components.HotelCard;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,6 +21,7 @@ public class HotelResult extends BasePage {
 
     @FindBy(css = ".hotel.listing")
     private List<WebElement> hotelList;
+
     @FindBy(id = "hotelResultTitle")
     private WebElement hotelResultTitle;
 

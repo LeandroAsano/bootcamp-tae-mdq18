@@ -1,9 +1,7 @@
-package com.bootcamp.mdq.page.home;
+package com.bootcamp.mdq.pages.home;
 
-import com.bootcamp.mdq.driver.DriverManager;
 import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.component.Header;
-import com.bootcamp.mdq.page.hotels.Hotel;
+import com.bootcamp.mdq.pages.components.Header;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

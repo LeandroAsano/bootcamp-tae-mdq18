@@ -1,6 +1,7 @@
-package com.bootcamp.mdq.page.flights;
+package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.component.BaseComponent;
+import com.bootcamp.mdq.pages.flights.FlightResult;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,9 +12,9 @@ import java.util.List;
 /**
  * Created by Matias on 30/08/2018.
  */
-public class Flight extends BasePage {
+public class FlightSearchForm extends BaseComponent {
 
-    @FindBy(id = "flight-origin.flp")
+    @FindBy(id = "flight-origin-flp")
     private WebElement flightOriginInput;
 
     @FindBy(id = "flight-destination-flp")
@@ -29,37 +30,42 @@ public class Flight extends BasePage {
     private WebElement flightAdultsInput;
 
     @FindBy(css = "button.btn-primary.btn-action.gcw-submit")
-    private List<WebElement> searchBtn;
+     private WebElement searchBtn;
 
-    private Flight origin(String origin){
+    public FlightSearchForm(WebElement container) {
+        super(container);
+    }
+
+    public FlightSearchForm enterOrigin(String origin){
         type(flightOriginInput,origin);
         return this;
     }
 
-    private Flight enterDestination(String destination){
+    public FlightSearchForm enterDestination(String destination){
         type(flighDestinationInput,destination);
         return this;
     }
 
-    private Flight enterCheckIn(int daysAhead){
+    public FlightSearchForm enterCheckIn(int daysAhead){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         type(flightDepartingInput,(LocalDate.now().plusDays(daysAhead).format(format)));
         return this;
     }
 
-    private Flight enterCheckOut(int daysAhead){
+    public FlightSearchForm enterCheckOut(int daysAhead){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         clear(flightReturningInput);
         type(flightReturningInput,(LocalDate.now().plusDays(daysAhead).format(format)));
         return this;
     }
 
-    public Flight selectAdults(int adults){
+    public FlightSearchForm selectAdults(int adults){
         selectByText(flightAdultsInput, String.valueOf(adults));
         return this;
     }
 
     public FlightResult search(){
+        click(searchBtn);
         return new FlightResult();
     }
 

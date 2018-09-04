@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.page.hotels;
+package com.bootcamp.mdq.pages.hotels;
 
 import com.bootcamp.mdq.page.BasePage;
 import org.openqa.selenium.WebElement;
