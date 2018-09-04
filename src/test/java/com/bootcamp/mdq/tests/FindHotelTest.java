@@ -19,7 +19,7 @@ public class FindHotelTest extends BaseTestSuite {
     }
 
     @Test
-    public void FindHotelTest() {
+    public void findHotelTest() {
         LocalDate checkInDate = LocalDate.now().plusYears(1);
         LocalDate checkOutDate = LocalDate.now().plusDays(7).plusYears(1);
 

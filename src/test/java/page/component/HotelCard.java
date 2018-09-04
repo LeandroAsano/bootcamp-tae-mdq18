@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HotelCard extends WebComponent {
 
-    @FindBy(className = "hotelTitle")
+    @FindBy(css = "a.flex-link")
     private WebElement hotelName;
 
     public HotelCard(WebElement container) {

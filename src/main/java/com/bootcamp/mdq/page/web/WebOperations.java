@@ -1,7 +1,10 @@
 package com.bootcamp.mdq.page.web;
 
+import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.ArrayList;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static com.bootcamp.mdq.waits.Waits.*;
@@ -50,11 +53,11 @@ public abstract class WebOperations {
    * @param element the {@link WebElement}
    */
   protected void switchNewTabHandle(WebElement element) {
-    String windowHandle = getDriver().getWebDriver().getWindowHandle();
-    click(element);
-    for(String winHandle : getDriver().getWebDriver().getWindowHandles()){
-      getDriver().getWebDriver().switchTo().window(winHandle);
-    }
+
+    isVisible(element).click();
+    ArrayList<String> tabs = new ArrayList<String> (getDriver().getWebDriver().getWindowHandles());
+    getDriver().getWebDriver().switchTo().window(tabs.get(1));
+
   }
 
   /**

@@ -17,7 +17,7 @@ public class ReservationTest extends BaseTestSuite {
     }
 
     @Test
-    public void ReservationTest() {
+    public void reservationTest() {
         ValidationPage valPage = this.home.getHeader()
                 .findHotels()
                 .setDestination("Miami Beach")

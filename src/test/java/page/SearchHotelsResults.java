@@ -1,12 +1,15 @@
 package page;
 
 import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.waits.Waits;
 import page.component.HotelCard;
 import page.component.RoomCard;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+
+import static com.bootcamp.mdq.waits.Waits.areVisible;
 
 public class SearchHotelsResults extends WebPage {
     @FindBy(id = "inpHotelNameMirror")
@@ -36,6 +39,7 @@ public class SearchHotelsResults extends WebPage {
     }
 
     public HotelCard getSingleResult(int id) {
+        areVisible(resultsContainer);
         return new HotelCard(getResults().get(id));
     }
 
