@@ -10,16 +10,16 @@ import java.util.List;
 public class RoomCard extends WebComponent {
 
     @FindAll({
-            @FindBy(className = ".rate-plan.rate-plan-first"),
-            @FindBy(className = ".rate-plan")
+            @FindBy(css = ".rate-plan.rate-plan-first"),
+            @FindBy(css = ".rate-plan")
     })
-    private List<RoomOption> roomPlans;
+    private List<WebElement> roomPlans;
 
     public RoomCard(WebElement container) {
         super(container);
     }
 
     public RoomOption bookRoom(int index) {
-        return roomPlans.get(index);
+        return new RoomOption(roomPlans.get(index));
     }
 }

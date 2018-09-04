@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class RoomOption extends WebComponent {
 
-    @FindBy(className = "btn-sub-action.book-button.btn-pwa")
+    @FindBy(css = ".btn-sub-action.book-button.btn-pwa")
     private WebElement reserveButton;
 
     public RoomOption(WebElement container) {

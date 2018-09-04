@@ -30,6 +30,8 @@ public class ReservationTest extends BaseTestSuite {
                 .selectNumberAdults("1")
                 .searchHotels()
                 .getSingleResult(0)
+                .selectHotel()
+                .selectRoom(0)
                 .bookRoom(0)
                 .reserveRoom();
 

@@ -1,6 +1,7 @@
 package page;
 
 import com.bootcamp.mdq.page.web.WebPage;
+import page.component.HotelCard;
 import page.component.RoomCard;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class SearchHotelsResults extends WebPage {
-
     @FindBy(id = "inpHotelNameMirror")
     private WebElement filterHotelNameInput;
 
@@ -19,7 +19,7 @@ public class SearchHotelsResults extends WebPage {
     private WebElement resultsNumber;
 
     @FindBy(css = ".hotel.listing.col")
-    private List<RoomCard> resultsContainer;
+    private List<WebElement> resultsContainer;
 
     public SearchHotelsResults filterHotelByName(String hotelName) {
         type(filterHotelNameInput, hotelName);
@@ -31,12 +31,12 @@ public class SearchHotelsResults extends WebPage {
         return this;
     }
 
-    public List<RoomCard> getResults() {
+    public List<WebElement> getResults() {
         return resultsContainer;
     }
 
-    public RoomCard getSingleResult(int id) {
-        return getResults().get(id);
+    public HotelCard getSingleResult(int id) {
+        return new HotelCard(getResults().get(id));
     }
 
 }
