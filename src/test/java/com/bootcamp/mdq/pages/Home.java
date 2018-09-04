@@ -2,6 +2,7 @@ package com.bootcamp.mdq.pages;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.pages.components.NavegationBar;
 
 public class Home extends WebPage {
 

@@ -1,8 +1,7 @@
-package com.bootcamp.mdq.pages;
+package com.bootcamp.mdq.pages.hotel;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

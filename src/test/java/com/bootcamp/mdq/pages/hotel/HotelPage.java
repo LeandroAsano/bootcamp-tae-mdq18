@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.pages;
+package com.bootcamp.mdq.pages.hotel;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+
+import static com.bootcamp.mdq.waits.Waits.areVisible;
 
 
 public class HotelPage extends WebPage {
@@ -18,8 +20,7 @@ public class HotelPage extends WebPage {
     }
 
     public PayBookingPage clickOnItem(int item){
-        //System.out.println(avaliableRooms.isEmpty());
-        //System.out.println(isVisible(avaliableRooms.get(0)));
-        return (new ItemRoomList(avaliableRooms.get(item))).clickOnReserve();
+        areVisible(avaliableRooms);
+        return (new ItemRoomList(avaliableRooms.get(item - 1))).clickOnReserve();
     }
 }

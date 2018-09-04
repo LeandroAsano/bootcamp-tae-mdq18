@@ -1,7 +1,9 @@
-package com.bootcamp.mdq.pages;
+package com.bootcamp.mdq.pages.components;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.pages.flights.Flights;
+import com.bootcamp.mdq.pages.hotel.Hotels;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,8 +23,8 @@ public class NavegationBar extends WebPage {
         return new Hotels();
     }
 
-    public Object clickOnFligths(){
+    public Flights clickOnFligths(){
         flightLink.click();
-        return new Object();
+        return new Flights();
     }
 }

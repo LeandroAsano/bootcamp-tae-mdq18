@@ -1,7 +1,8 @@
-package com.bootcamp.mdq.pages;
+package com.bootcamp.mdq.pages.hotel;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.pages.components.NavegationBar;
 import com.bootcamp.mdq.pages.components.HotelCard;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

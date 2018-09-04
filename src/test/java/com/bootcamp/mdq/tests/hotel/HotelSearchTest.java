@@ -1,19 +1,16 @@
-package com.bootcamp.mdq.tests.cheapTickectTest;
+package com.bootcamp.mdq.tests.hotel;
 
 
 import com.bootcamp.mdq.pages.Home;
-import com.bootcamp.mdq.pages.HotelPage;
-import com.bootcamp.mdq.pages.PayBookingPage;
-import com.bootcamp.mdq.pages.SearchResults;
+import com.bootcamp.mdq.pages.hotel.HotelPage;
+import com.bootcamp.mdq.pages.hotel.PayBookingPage;
+import com.bootcamp.mdq.pages.hotel.SearchResults;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-
-import static com.bootcamp.mdq.driver.Drivers.getDriver;
 
 
-public class CheckHotelsFuncionalityTest extends BaseTestSuite {
+public class HotelSearchTest extends BaseTestSuite {
 
     private Home home;
 
@@ -39,14 +36,11 @@ public class CheckHotelsFuncionalityTest extends BaseTestSuite {
 
         //The results´s name on the list contain the name Filt
         Assert.assertTrue(searchResults.validResults("Faena Hotel Miami Beach"));
-
-
     }
 
 
     @Test
-
-    public  void bookingTest(){
+    public void bookingTest() {
 
         home = new Home();
 
@@ -59,12 +53,9 @@ public class CheckHotelsFuncionalityTest extends BaseTestSuite {
                 .clickOnSearch()
                 .clickOnItemOverSearchResult(0);
 
+        hotelPage.changeWindow(2);
 
-        //hotelPage.changeWindow(1);
-
-        PayBookingPage payBookingPage=hotelPage.clickOnItem(0);
-
-        //DriverManager.getDriver().findElement(By.id("deposit-pay-now-button")).click();
+        PayBookingPage payBookingPage = hotelPage.clickOnItem(1);
 
         Assert.assertTrue(payBookingPage.hasCardHolderName());
         Assert.assertTrue(payBookingPage.hasCreditCardNumber());
@@ -72,8 +63,6 @@ public class CheckHotelsFuncionalityTest extends BaseTestSuite {
         Assert.assertTrue(payBookingPage.hasExpirationYear());
         Assert.assertTrue(payBookingPage.hasSecurityCode());
         Assert.assertTrue(payBookingPage.hasZipCode());
-
-
     }
 
 }

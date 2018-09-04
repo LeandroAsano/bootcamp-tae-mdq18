@@ -1,11 +1,9 @@
-package com.bootcamp.mdq.pages;
+package com.bootcamp.mdq.pages.flights;
 
 import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.pages.components.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import static jdk.nashorn.internal.objects.NativeJava.type;
 
 public class Flights extends WebPage {
     @FindBy(id="flight-origin-flp")
@@ -23,7 +21,7 @@ public class Flights extends WebPage {
     @FindBy (id="flight-adults-flp")
     private WebElement numberOfAdults;
 
-    @FindBy(css = "[data-gcw-change-submit-text='Search']")
+    @FindBy(css = "btn-primary btn-action gcw-submit ")
     private WebElement searchButton;
 
 
@@ -58,8 +56,6 @@ public class Flights extends WebPage {
         return this;
     }
 
-
-
     private DatePicker clickOnDepeture(){
         click(deperturingDate);
         deperturingDate.clear();
@@ -70,6 +66,11 @@ public class Flights extends WebPage {
         click(returingDate);
         returingDate.clear();
         return new DatePicker();
+    }
+
+    public FlightsResults clickOnSearch(){
+        click(searchButton);
+        return new FlightsResults();
     }
     
 }

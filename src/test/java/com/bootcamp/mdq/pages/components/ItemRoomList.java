@@ -3,11 +3,9 @@ package com.bootcamp.mdq.pages.components;
 
 
 import com.bootcamp.mdq.page.web.WebComponent;
-import com.bootcamp.mdq.pages.PayBookingPage;
+import com.bootcamp.mdq.pages.hotel.PayBookingPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import static com.bootcamp.mdq.waits.Waits.isVisible;
 
 public class ItemRoomList extends WebComponent {
 
@@ -19,7 +17,6 @@ public class ItemRoomList extends WebComponent {
     }
 
     public PayBookingPage clickOnReserve(){
-        isVisible(reserveButton);
         click(reserveButton);
         return new PayBookingPage();
     }

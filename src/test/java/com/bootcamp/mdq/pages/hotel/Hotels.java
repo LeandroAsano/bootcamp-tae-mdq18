@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.pages;
+package com.bootcamp.mdq.pages.hotel;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
