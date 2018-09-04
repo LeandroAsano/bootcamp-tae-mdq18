@@ -1,10 +1,11 @@
 package com.bootcamp.mdq.pages;
 
-import com.bootcamp.mdq.page.BasePage;
+
+import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class NavegationBar extends BasePage {
+public class NavegationBar extends WebPage {
 
     @FindBy (id ="primary-header-hotel")
     private WebElement hotelLink;

@@ -1,10 +1,15 @@
 package com.bootcamp.mdq.page.web;
 
+import com.bootcamp.mdq.driver.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static com.bootcamp.mdq.waits.Waits.*;
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 
 public abstract class WebOperations {
 
@@ -67,5 +72,18 @@ public abstract class WebOperations {
   private Select select(WebElement webElement) {
     return new Select(webElement);
   }
+
+
+  public void setNumerOf(WebElement element, String amount){
+    Select selector=select(element);
+    selector.selectByValue(amount);
+  }
+
+  /*  public void changeWindow(int position){
+    ArrayList<String> tabs = new ArrayList<String>(DriverManager.getDriver().getWindowHandles());
+    DriverManager.getDriver().switchTo().window(tabs.get(position));
+  }*/
+
+
 
 }

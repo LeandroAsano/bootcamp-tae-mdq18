@@ -1,6 +1,7 @@
 package com.bootcamp.mdq.pages;
 
-import com.bootcamp.mdq.page.BasePage;
+
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.pages.components.HotelCard;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,8 +10,10 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.bootcamp.mdq.waits.Waits.notVisible;
 
-public class SearchResults extends BasePage {
+
+public class SearchResults extends WebPage {
 
     private NavegationBar navegationBar;
 

@@ -1,11 +1,13 @@
 package com.bootcamp.mdq.pages;
 
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PayBookingPage extends BasePage {
+
+public class PayBookingPage extends WebPage {
 
     @FindBy (id= "payments")
     private WebElement creditCardInfoContainer;
@@ -64,53 +66,54 @@ public class PayBookingPage extends BasePage {
 
 
     public boolean hasCardHolderName() {
-        isVisible(creditCardInfoContainer);
-        return isVisible(cardHolderName);
+        if(cardHolderName==null){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public boolean hasCreditCardNumber() {
-        return isVisible(creditCardNumber);
+        if(creditCardNumber==null){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public boolean hasMonthSelector() {
-        return isVisible(expirationMonth);
+        if(expirationMonth==null){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public boolean hasExpirationYear() {
-        return isVisible(expirationYear);
+        if(expirationYear==null){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public boolean hasSecurityCode() {
-        return isVisible(securityCode);
+        if(securityCode==null){
+            return false;
+        }else {
+            return true;
+        }
     }
 
     public boolean hasZipCode() {
-        return isVisible(zipCode);
+        if(zipCode==null){
+            return false;
+        }else {
+            return true;
+        }
     }
 
-    public boolean availableCardHolderName() {
-        return isEnabled(cardHolderName);
-    }
 
-    public boolean availableCreditCardNumber() {
-        return isEnabled(creditCardNumber);
-    }
-
-    public boolean availableMonthSelector() {
-        return isEnabled(expirationMonth);
-    }
-
-    public boolean availableExpirationYear() {
-        return isEnabled(expirationYear);
-    }
-
-    public boolean availableSecurityCode() {
-        return isEnabled(securityCode);
-    }
-
-    public boolean availableZipCode() {
-        return isEnabled(zipCode);
-    }
 
 }
 

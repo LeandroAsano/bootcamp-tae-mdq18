@@ -1,11 +1,12 @@
 package com.bootcamp.mdq.pages;
 
-import com.bootcamp.mdq.page.BasePage;
+
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.pages.components.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Hotels extends BasePage {
+public class Hotels extends WebPage {
 
     @FindBy(id = "hotel-destination-hlp")
     private WebElement searchInput;

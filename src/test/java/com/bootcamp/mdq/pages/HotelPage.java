@@ -1,7 +1,7 @@
 package com.bootcamp.mdq.pages;
 
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.pages.components.ItemRoomList;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 
-public class HotelPage extends BasePage {
+public class HotelPage extends WebPage {
 
     @FindBy (css = "tbody.room")
     List<WebElement>  avaliableRooms;

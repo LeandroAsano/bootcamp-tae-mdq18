@@ -10,6 +10,7 @@ public class MyTest extends BaseTestSuite {
 
   @Test
   public void myTest() {
+
     WebDriver webDriver = getDriver().getWebDriver();
   }
 }

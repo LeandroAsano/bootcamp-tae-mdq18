@@ -32,6 +32,10 @@ public final class Waits {
     return waiting().until(visibilityOf(webElement));
   }
 
+  public static void notVisible(WebElement webElement) {
+    waiting().until(invisibilityOf(webElement));
+  }
+
   /**
    * Verifies if the expected text is present in the element.
    *
@@ -43,8 +47,10 @@ public final class Waits {
     return waiting().until(or(textToBePresentInElement(webElement, text), textToBePresentInElementValue(webElement, text)));
   }
 
+
   private static WebDriverWait waiting() {
     return getDriver().getWebDriverWait();
   }
+
 
 }

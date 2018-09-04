@@ -1,16 +1,16 @@
 package com.bootcamp.mdq.tests.cheapTickectTest;
 
-import com.bootcamp.mdq.driver.DriverManager;
+
 import com.bootcamp.mdq.pages.Home;
 import com.bootcamp.mdq.pages.HotelPage;
 import com.bootcamp.mdq.pages.PayBookingPage;
 import com.bootcamp.mdq.pages.SearchResults;
-import com.bootcamp.mdq.tests.BaseTestSuite;
+import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
-import org.junit.Assume;
 import org.junit.Test;
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
+import static com.bootcamp.mdq.driver.Drivers.getDriver;
 
 
 public class CheckHotelsFuncionalityTest extends BaseTestSuite {
@@ -60,7 +60,7 @@ public class CheckHotelsFuncionalityTest extends BaseTestSuite {
                 .clickOnItemOverSearchResult(0);
 
 
-        hotelPage.changeWindow(1);
+        //hotelPage.changeWindow(1);
 
         PayBookingPage payBookingPage=hotelPage.clickOnItem(0);
 
@@ -73,12 +73,6 @@ public class CheckHotelsFuncionalityTest extends BaseTestSuite {
         Assert.assertTrue(payBookingPage.hasSecurityCode());
         Assert.assertTrue(payBookingPage.hasZipCode());
 
-        Assert.assertTrue(payBookingPage.availableCardHolderName());
-        Assert.assertTrue(payBookingPage.availableCreditCardNumber());
-        Assert.assertTrue(payBookingPage.availableMonthSelector());
-        Assert.assertTrue(payBookingPage.availableExpirationYear());
-        Assert.assertTrue(payBookingPage.availableSecurityCode());
-        Assert.assertTrue(payBookingPage.availableZipCode());
 
     }
 

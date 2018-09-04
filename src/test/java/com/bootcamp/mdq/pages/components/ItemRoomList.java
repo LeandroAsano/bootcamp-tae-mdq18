@@ -1,12 +1,15 @@
 package com.bootcamp.mdq.pages.components;
 
 
-import com.bootcamp.mdq.page.component.BaseComponent;
+
+import com.bootcamp.mdq.page.web.WebComponent;
 import com.bootcamp.mdq.pages.PayBookingPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ItemRoomList extends BaseComponent {
+import static com.bootcamp.mdq.waits.Waits.isVisible;
+
+public class ItemRoomList extends WebComponent {
 
     @FindBy(className = "book-button-wrapper")
     WebElement reserveButton;

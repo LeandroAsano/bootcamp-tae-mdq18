@@ -1,6 +1,6 @@
 package com.bootcamp.mdq.pages.components;
 
-import com.bootcamp.mdq.page.BasePage;
+import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +10,7 @@ import java.util.Calendar;
 import java.util.List;
 
 //deberia extender de baseComponent pero no encontaba forma de pasarle el contenedor al constructor y que funcionara
-public class DatePicker extends BasePage {
+public class DatePicker extends WebPage {
 
     //next month button
     @FindBy(className = "datepicker-next")

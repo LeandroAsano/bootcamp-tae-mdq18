@@ -1,13 +1,14 @@
 package com.bootcamp.mdq.pages;
 
-import com.bootcamp.mdq.page.BasePage;
 
-public class Home extends BasePage {
+import com.bootcamp.mdq.page.web.WebPage;
+
+public class Home extends WebPage {
 
     private NavegationBar navegationBar;
 
     public Home() {
-        navigate("https://www.cheaptickets.com");
+        goTo("https://www.cheaptickets.com");
         navegationBar=new NavegationBar();
     }
 
