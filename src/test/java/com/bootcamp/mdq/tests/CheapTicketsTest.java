@@ -1,33 +1,41 @@
 package com.bootcamp.mdq.tests;
 
-import com.bootcamp.mdq.page.home.Home;
-import com.bootcamp.mdq.page.results.ResultsSearchHotel;
+import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import pages.Home;
+import pages.ResultsSearchHotel;
+
+import static com.bootcamp.mdq.driver.Drivers.getDriver;
 
 public class CheapTicketsTest extends BaseTestSuite {
 
-    private Home home;
+  private Home home;
 
-    @Test
-    public void myTest() {
+  @Test
+  public void myTest() {
 
-        home = new Home;
+    WebDriver webDriver = getDriver().getWebDriver();
 
-        ResultsSearchHotel result = home.header()
-                .clickHotel()
-                .destination("Miami Beach")
-                .checkIn(4)
-                .checkOut(20)
-                .rooms(1)
-                .adults(4)
-                .childs(1)
-                .childsAge(7)
-                .search()
-                .serchHotelName("Faena Hotel Miami Beach")
-                .findHotel();
+    home = new Home();
 
-        Assert.assertFalse(ResultsSearchHotel.getResults().size() > 0);
+    ResultsSearchHotel result = home.header()
+            .clickHotel()
+            .destination("Miami Beach")
+            //.close()
+            .checkIn(10)
+            .checkOut(0)
+            .rooms(1)
+            .selectAdults(4)
+            .childs(1)
+            .childsAge(7)
+            .search()
+            .serchHotelName("Faena Hotel Miami Beach")
+            .findHotel();
 
-    }
+    Assert.assertTrue("Flights are displayed",result.getResults().size() > 0);
+
+  }
+
 }
