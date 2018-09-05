@@ -3,6 +3,7 @@ package com.bootcamp.mdq.driver;
 import com.bootcamp.mdq.browser.Browsers;
 import com.bootcamp.mdq.logger.Loggeable;
 import com.bootcamp.mdq.platform.Platform;
+import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -34,8 +35,7 @@ public final class Drivers implements Loggeable {
       WebDriver webdriver;
       switch (platform) {
         case MOBILE:
-          //getDriver = new AppiumDriver(new URL(TEST_PROPERTIES.getRemoteAppiumUrl()), browsers.getCapabilities());
-          webdriver = null;
+          webdriver = new AppiumDriver(new URL(TEST_PROPERTIES.getRemoteAppiumUrl()), browsers.getCapabilities());
           break;
         case WEB: {
           webdriver = new RemoteWebDriver(new URL(TEST_PROPERTIES.getRemoteServerUrl()), browsers.getCapabilities());

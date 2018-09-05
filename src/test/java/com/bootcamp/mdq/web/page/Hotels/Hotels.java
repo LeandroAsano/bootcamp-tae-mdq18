@@ -1,12 +1,10 @@
-package page.Hotels;
+package com.bootcamp.mdq.web.page.Hotels;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import page.SearchHotelsResults;
-import page.component.DatePicker;
+import com.bootcamp.mdq.web.page.SearchHotelsResults;
+import com.bootcamp.mdq.web.page.component.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.time.LocalDate;
 
 public class Hotels extends WebPage {
 

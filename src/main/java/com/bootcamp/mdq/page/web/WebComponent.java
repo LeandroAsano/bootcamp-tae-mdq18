@@ -7,8 +7,14 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 
 public abstract class WebComponent extends WebOperations {
 
+  private WebElement container;
+
   public WebComponent(WebElement container) {
+    this.container = container;
     initElements(new DefaultElementLocatorFactory(container), this);
   }
 
+  public WebElement getContainer() {
+    return container;
+  }
 }

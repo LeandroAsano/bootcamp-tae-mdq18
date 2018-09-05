@@ -1,10 +1,10 @@
-package page;
+package com.bootcamp.mdq.web.page;
 
 import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import page.component.RoomCard;
+import com.bootcamp.mdq.web.page.component.RoomCard;
 
 import java.util.List;
 

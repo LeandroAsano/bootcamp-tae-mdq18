@@ -1,4 +1,4 @@
-package page.component;
+package com.bootcamp.mdq.web.page.component;
 
 import com.bootcamp.mdq.page.web.WebComponent;
 import org.openqa.selenium.WebElement;

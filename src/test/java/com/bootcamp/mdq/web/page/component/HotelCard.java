@@ -1,7 +1,7 @@
-package page.component;
+package com.bootcamp.mdq.web.page.component;
 
 import com.bootcamp.mdq.page.web.WebComponent;
-import page.Reservation;
+import com.bootcamp.mdq.web.page.Reservation;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

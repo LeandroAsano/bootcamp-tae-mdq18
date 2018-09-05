@@ -54,7 +54,7 @@ public enum TestProperties {
   /**
    * Returns the remote server URL for the Appium Server.
    *
-   * @return the remote server URL to execute mobile testing as {@link String}
+   * @return the remote server URL to execute com.bootcamp.mdq.mobile testing as {@link String}
    */
   public String getRemoteAppiumUrl() {
     return getTestProperty(REMOTE_APPIUM_URL);
@@ -88,9 +88,9 @@ public enum TestProperties {
   }
 
   /**
-   * Returns the page load timeout.
+   * Returns the com.bootcamp.mdq.web.page load timeout.
    *
-   * @return the page load timeout as {@link Long}
+   * @return the com.bootcamp.mdq.web.page load timeout as {@link Long}
    */
   public Long getPageLoadTimeout() {
     return Long.valueOf(getTestProperty(PAGE_LOAD_TIMEOUT));

@@ -1,15 +1,17 @@
 package com.bootcamp.mdq.page.web;
 
-import com.bootcamp.mdq.waits.Waits;
+import com.bootcamp.mdq.page.CommonOperations;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
-import static com.bootcamp.mdq.waits.Waits.*;
+import static com.bootcamp.mdq.waits.Waits.isClickable;
+import static com.bootcamp.mdq.waits.Waits.isTextPresent;
+import static com.bootcamp.mdq.waits.Waits.isVisible;
 
-public abstract class WebOperations {
+public abstract class WebOperations extends CommonOperations {
 
   /**
    * Navigates to the URL.
@@ -21,7 +23,7 @@ public abstract class WebOperations {
   }
 
   /**
-   * Refresh the page.
+   * Refresh the com.bootcamp.mdq.web.page.
    */
   protected void refresh() {
     getDriver().getWebDriver().navigate().refresh();
@@ -48,7 +50,7 @@ public abstract class WebOperations {
   }
 
   /**
-   * Switchs to new popup tab after a click on the page
+   * Switchs to new popup tab after a click on the com.bootcamp.mdq.web.page
    *
    * @param element the {@link WebElement}
    */
@@ -72,7 +74,7 @@ public abstract class WebOperations {
   }
 
   /**
-   * Gets the text from the web element.
+   * Gets the text from the com.bootcamp.mdq.web element.
    *
    * @param webElement the {@link WebElement}
    * @return the text

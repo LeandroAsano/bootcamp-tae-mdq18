@@ -1,8 +1,8 @@
-package com.bootcamp.mdq.tests;
+package com.bootcamp.mdq.web.test;
 
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
-import page.Home.Home;
-import page.SearchHotelsResults;
+import com.bootcamp.mdq.web.page.Home.Home;
+import com.bootcamp.mdq.web.page.SearchHotelsResults;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
