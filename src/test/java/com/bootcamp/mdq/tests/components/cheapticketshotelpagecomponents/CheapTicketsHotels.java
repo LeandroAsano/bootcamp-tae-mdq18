@@ -1,6 +1,4 @@
-package com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents;
-
-import com.bootcamp.mdq.page.BasePage;
+package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
 
 public class CheapTicketsHotels extends BasePage {
 

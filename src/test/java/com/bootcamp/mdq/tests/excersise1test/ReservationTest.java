@@ -1,7 +1,7 @@
 package com.bootcamp.mdq.tests.excersise1test;
 
-import com.bootcamp.mdq.page.components.cheapticketshomepagecomponents.CheapTicketsHome;
-import com.bootcamp.mdq.page.components.cheapticketshotelofferspagecomponents.HotelCard;
+import com.bootcamp.mdq.tests.components.cheapticketshomepagecomponents.CheapTicketsHome;
+import com.bootcamp.mdq.tests.components.cheapticketshotelofferspagecomponents.HotelCard;
 import com.bootcamp.mdq.tests.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Test;

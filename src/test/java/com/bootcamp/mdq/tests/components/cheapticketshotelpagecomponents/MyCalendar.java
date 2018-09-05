@@ -1,9 +1,8 @@
-package com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents;
+package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
 
-import com.bootcamp.mdq.page.BasePage;
-import com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents.calendarworkflow.StayTime;
-import com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents.calendarworkflow.CalendarPage;
-import com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents.comboboxworkflow.AdultsComboBox;
+import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow.StayTime;
+import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow.CalendarPage;
+import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.comboboxworkflow.AdultsComboBox;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

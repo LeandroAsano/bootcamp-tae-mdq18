@@ -1,6 +1,4 @@
-package com.bootcamp.mdq.page.components.cheapticketshotelofferspagecomponents;
-
-import org.openqa.selenium.WebElement;
+package com.bootcamp.mdq.tests.components.cheapticketshotelofferspagecomponents;
 
 /**
  * Created by Yo on 3/9/2018.

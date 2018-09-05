@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents.comboboxworkflow;
+package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.comboboxworkflow;
 
 
 import org.openqa.selenium.WebElement;

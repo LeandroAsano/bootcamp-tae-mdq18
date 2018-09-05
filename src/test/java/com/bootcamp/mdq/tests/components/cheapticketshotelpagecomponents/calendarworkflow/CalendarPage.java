@@ -1,6 +1,5 @@
-package com.bootcamp.mdq.page.components.cheapticketshotelpagecomponents.calendarworkflow;
+package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow;
 
-import com.bootcamp.mdq.page.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

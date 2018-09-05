@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.page.components.cheapticketshotelofferspagecomponents;
+package com.bootcamp.mdq.tests.components.cheapticketshotelofferspagecomponents;
 
 /**
  * Created by Yo on 3/9/2018.
