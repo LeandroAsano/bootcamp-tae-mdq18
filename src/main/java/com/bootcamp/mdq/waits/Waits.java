@@ -1,8 +1,13 @@
 package com.bootcamp.mdq.waits;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
@@ -32,6 +37,10 @@ public final class Waits {
     return waiting().until(visibilityOf(webElement));
   }
 
+  public static void isNotVisible(WebElement webElement) {
+    waiting().until(invisibilityOf(webElement));
+  }
+
   /**
    * Verifies if the expected text is present in the element.
    *
@@ -43,8 +52,17 @@ public final class Waits {
     return waiting().until(or(textToBePresentInElement(webElement, text), textToBePresentInElementValue(webElement, text)));
   }
 
+  public static void pageReady(){
+    getDriver().getWebDriver().manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+  }
+
   private static WebDriverWait waiting() {
     return getDriver().getWebDriverWait();
+  }
+
+  public static void jsWait() {
+    new WebDriverWait(getDriver().getWebDriver(), 30).until((ExpectedCondition<Boolean>) wd ->
+            ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
   }
 
 }

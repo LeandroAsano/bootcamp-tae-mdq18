@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow;
 
+import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +11,7 @@ import java.util.List;
 /**
  * Created by Yo on 2/9/2018.
  */
-public class CalendarPage extends BasePage{
+public class CalendarPage extends WebPage{
 
     @FindBy(className = "datepicker-day-number")
     private List<WebElement> days;

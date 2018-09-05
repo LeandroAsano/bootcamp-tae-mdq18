@@ -1,9 +1,12 @@
 package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
 
+import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SugestionsForCompletedSearchBar extends BasePage {
+import static com.bootcamp.mdq.js.Javascript.click;
+
+public class SugestionsForCompletedSearchBar extends WebPage {
 
 
     @FindBy(css = ".footer .close")

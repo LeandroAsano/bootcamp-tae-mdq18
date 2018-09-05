@@ -1,10 +1,11 @@
 package com.bootcamp.mdq.tests.components.cheapticketshomepagecomponents;
 
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.CheapTicketsHotels;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CheapTicketsHome extends BasePage {
+public class CheapTicketsHome extends WebPage {
 
     @FindBy(id="primary-header-hotel")
     private WebElement hotelbutton;
@@ -19,22 +20,8 @@ public class CheapTicketsHome extends BasePage {
     }
 
     public CheapTicketsHotels initHotelReservationTest(){
-        navigate(HOME_URL);
+        goTo(HOME_URL);
         click(hotelbutton);
         return cheapTicketsHotels;
     }
-
-
-    /**
-     *  CALENDARIO : COMPONENTE REUTILIZABLE
-     *  - ABSTRAER.
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     *
-     */
 }

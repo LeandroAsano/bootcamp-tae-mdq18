@@ -3,6 +3,8 @@ package com.bootcamp.mdq.page.web;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.Set;
+
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static com.bootcamp.mdq.waits.Waits.*;
 
@@ -67,5 +69,14 @@ public abstract class WebOperations {
   private Select select(WebElement webElement) {
     return new Select(webElement);
   }
+
+  public void changeToLastTab(){
+    Set<String> tab_handles = getDriver().getWebDriver().getWindowHandles();
+    int number_of_tabs = tab_handles.size();
+    int new_tab_index = number_of_tabs- 1;
+    getDriver().getWebDriver().switchTo().window(tab_handles.toArray()[new_tab_index].toString());
+  }
+
+
 
 }

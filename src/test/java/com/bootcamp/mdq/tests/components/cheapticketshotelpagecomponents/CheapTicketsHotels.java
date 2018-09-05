@@ -1,6 +1,8 @@
 package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
 
-public class CheapTicketsHotels extends BasePage {
+import com.bootcamp.mdq.page.web.WebPage;
+
+public class CheapTicketsHotels extends WebPage {
 
     private GoingToSearchBar goingToSearchBar;
 

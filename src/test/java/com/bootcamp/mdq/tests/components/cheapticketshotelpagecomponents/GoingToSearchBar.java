@@ -1,11 +1,14 @@
 package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
 
+import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
+import com.bootcamp.mdq.page.web.WebOperations;
 import java.time.LocalDate;
 
-public class GoingToSearchBar extends BasePage {
+
+
+public class GoingToSearchBar extends WebPage {
 
     @FindBy(id = "hotel-destination-hlp")
     private WebElement goingToSearchBarInput;

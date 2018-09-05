@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
 
+import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow.StayTime;
 import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow.CalendarPage;
 import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.comboboxworkflow.AdultsComboBox;
@@ -9,11 +10,13 @@ import org.openqa.selenium.support.FindBy;
 
 import java.time.LocalDate;
 
+import static com.bootcamp.mdq.js.Javascript.click;
+
 
 /**
  * Created by Yo on 2/9/2018.
  */
-public class MyCalendar extends BasePage {
+public class MyCalendar extends WebPage {
 
 
     @FindBy(name = "startDate")
