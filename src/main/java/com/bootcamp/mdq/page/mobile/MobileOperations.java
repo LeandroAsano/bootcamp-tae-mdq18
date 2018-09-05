@@ -4,6 +4,8 @@ import com.bootcamp.mdq.page.CommonOperations;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.interactions.touch.TouchActions;
 
+import java.util.concurrent.TimeUnit;
+
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static com.bootcamp.mdq.waits.Waits.isClickable;
 import static com.bootcamp.mdq.waits.Waits.isVisible;
@@ -28,6 +30,7 @@ public abstract class MobileOperations extends CommonOperations {
    */
   protected void tap(MobileElement mobileElement) {
     isClickable(mobileElement);
+    getDriver().getWebDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     touchActions().singleTap(mobileElement);
   }
 

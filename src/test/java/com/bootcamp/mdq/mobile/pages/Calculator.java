@@ -7,7 +7,11 @@ import org.openqa.selenium.support.CacheLookup;
 
 import java.util.Arrays;
 
+import static java.lang.Double.valueOf;
+
 public class Calculator extends MobilePage {
+
+    private static final String DIGIT_LOCATOR = "digit_";
 
     @CacheLookup
     @AndroidFindBy(id = "digit_0")
@@ -20,6 +24,10 @@ public class Calculator extends MobilePage {
     @CacheLookup
     @AndroidFindBy(id = "digit_5")
     private MobileElement digit5Button;
+
+    @CacheLookup
+    @AndroidFindBy(id = "dec_point")
+    private MobileElement decimalPoint;
 
     @CacheLookup
     @AndroidFindBy(id = "op_add")
@@ -40,29 +48,51 @@ public class Calculator extends MobilePage {
     private Calculator tapDigit(String digit) {
         switch (digit) {
             case "0":
-                tap(digit0Button);
+                click(digit0Button);
+                break;
             case "1":
-                tap(digit0Button);
+                click(digit1Button);
+                break;
             case "5":
-                tap(digit5Button);
+                click(digit5Button);
+                break;
+            case ".":
+                click(decimalPoint);
+                break;
         }
         return this;
     }
 
-    public Calculator enterNumber(double number) {
-        Arrays.stream(String.valueOf(number).split("(?!^)")).forEach(this::tapDigit);
+    public Calculator enterIntegerNumber(double number) {
+
+        // Remove floating point from double value
+        String integerNumber = String.valueOf(number).replaceAll("\\.0*$", "");
+
+        // Split into single numbers and for each one click corresponding button
+        Arrays.stream(integerNumber.split("(?!^)")).forEach(this::tapDigit);
+
+        return this;
+    }
+
+    public Calculator enterFloatingPointNumber(double number) {
+
+        // Split into single numbers and for each one click corresponding button
+        Arrays.stream(String.valueOf(number).split("")).forEach(this::tapDigit);
+
         return this;
     }
 
     public Calculator selectOperation(String operation) {
         switch (operation) {
-            case "+": tap(addButton);
+            case "+":
+                click(addButton);
+                break;
         }
         return this;
     }
 
-    public String getResult() {
-        return getText(resultLayout);
+    public double getResult() {
+        return valueOf(getText(resultLayout)).doubleValue();
     }
 
 }

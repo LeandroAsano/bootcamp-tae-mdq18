@@ -17,12 +17,12 @@ public class CalculatorBasicOperations extends BaseTestSuite {
 
     @Test
     public void performBasicOperations() {
-        String result = calculator.enterNumber(10000)
+        double result = calculator.enterIntegerNumber(10000)
                 .selectOperation("+")
-                .enterNumber(5000)
+                .enterIntegerNumber(5000)
                 .getResult();
 
-        Assert.assertEquals(150000, java.util.Optional.of(Double.valueOf(result)));
+        Assert.assertTrue(result == 15000);
     }
 
 }
