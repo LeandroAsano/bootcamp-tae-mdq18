@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.webTests.cheaptickets;
+package com.bootcamp.mdq.web.tests;
 
-import com.bootcamp.mdq.pages.flights.FlightResult;
-import com.bootcamp.mdq.pages.home.Home;
+import com.bootcamp.mdq.web.pages.flights.FlightResult;
+import com.bootcamp.mdq.web.pages.home.Home;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ public class FlightTest extends BaseTestSuite {
         home = new Home();
     }
 
-    @Test
+    /*@Test
     public void searchFlightTest(){
         FlightResult result = home.header().clickFlight().searchFlight()
                 .enterOrigin("LAS")
@@ -40,5 +40,5 @@ public class FlightTest extends BaseTestSuite {
         assertTrue(result.hotelSellModal().isNoThanksLinkVisible());
 
 
-    }
+    }*/
 }

@@ -1,8 +1,7 @@
-package com.bootcamp.mdq.pages.hotels;
+package com.bootcamp.mdq.web.pages.hotels;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.pages.components.HotelCard;
-import com.bootcamp.mdq.waits.Waits;
+import com.bootcamp.mdq.web.pages.components.HotelCard;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

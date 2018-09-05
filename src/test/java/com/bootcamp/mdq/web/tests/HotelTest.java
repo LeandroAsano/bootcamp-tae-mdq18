@@ -1,8 +1,8 @@
-package com.bootcamp.mdq.webTests.cheaptickets;
+package com.bootcamp.mdq.web.tests;
 
-import com.bootcamp.mdq.pages.components.HotelCard;
-import com.bootcamp.mdq.pages.home.Home;
-import com.bootcamp.mdq.pages.hotels.HotelResult;
+import com.bootcamp.mdq.web.pages.components.HotelCard;
+import com.bootcamp.mdq.web.pages.home.Home;
+import com.bootcamp.mdq.web.pages.hotels.HotelResult;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Before;
 import org.junit.Test;

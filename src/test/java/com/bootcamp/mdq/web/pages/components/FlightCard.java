@@ -1,8 +1,7 @@
-package com.bootcamp.mdq.pages.components;
+package com.bootcamp.mdq.web.pages.components;
 
 import com.bootcamp.mdq.page.web.WebComponent;
-import com.bootcamp.mdq.pages.flights.FlightResult;
-import com.bootcamp.mdq.waits.Waits;
+import com.bootcamp.mdq.web.pages.flights.FlightResult;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

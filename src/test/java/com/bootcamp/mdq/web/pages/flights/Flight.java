@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.pages.flights;
+package com.bootcamp.mdq.web.pages.flights;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.pages.components.FlightSearchForm;
+import com.bootcamp.mdq.web.pages.components.FlightSearchForm;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

@@ -1,13 +1,9 @@
-package com.bootcamp.mdq.pages.components;
+package com.bootcamp.mdq.web.pages.components;
 
 import com.bootcamp.mdq.page.web.WebComponent;
-import com.bootcamp.mdq.pages.flights.FlightResult;
+import com.bootcamp.mdq.web.pages.flights.FlightResult;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 /**
  * Created by Matias on 30/08/2018.

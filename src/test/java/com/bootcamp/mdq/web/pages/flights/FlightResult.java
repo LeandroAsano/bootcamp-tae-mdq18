@@ -1,9 +1,8 @@
-package com.bootcamp.mdq.pages.flights;
+package com.bootcamp.mdq.web.pages.flights;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.pages.components.FlightResultList;
-import com.bootcamp.mdq.pages.components.HotelSellModal;
-import com.bootcamp.mdq.waits.Waits;
+import com.bootcamp.mdq.web.pages.components.FlightResultList;
+import com.bootcamp.mdq.web.pages.components.HotelSellModal;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

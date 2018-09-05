@@ -1,14 +1,11 @@
-package com.bootcamp.mdq.pages.hotels;
+package com.bootcamp.mdq.web.pages.hotels;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.waits.Waits;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
-import static com.bootcamp.mdq.waits.Waits.*;
 
 public class Hotel extends WebPage {
 

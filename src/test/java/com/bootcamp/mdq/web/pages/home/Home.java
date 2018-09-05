@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.pages.home;
+package com.bootcamp.mdq.web.pages.home;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.pages.components.Header;
+import com.bootcamp.mdq.web.pages.components.Header;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
