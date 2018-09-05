@@ -3,6 +3,8 @@ package com.bootcamp.mdq.page.web;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static com.bootcamp.mdq.waits.Waits.*;
 
@@ -66,6 +68,17 @@ public abstract class WebOperations {
 
   private Select select(WebElement webElement) {
     return new Select(webElement);
+  }
+
+  public void setNumber(WebElement element, String amount) {
+    Select selector = select(element);
+    selector.selectByValue(amount);
+  }
+
+  public void changeWindow(int window) {
+    hasWindows(window);
+    ArrayList<String> windows = new ArrayList<String>(getDriver().getWebDriver().getWindowHandles());
+    getDriver().getWebDriver().switchTo().window(windows.get(window - 1));
   }
 
 }

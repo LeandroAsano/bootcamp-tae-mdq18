@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pages.Home;
+import pages.HotelDetails;
+import pages.PayPage;
 import pages.ResultsSearchHotel;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
@@ -34,8 +36,33 @@ public class CheapTicketsTest extends BaseTestSuite {
             .serchHotelName("Faena Hotel Miami Beach")
             .findHotel();
 
-    Assert.assertTrue("Flights are displayed",result.getResults().size() > 0);
+    Assert.assertTrue("Flights are displayed",result.results("Faena Hotel Miami Beach"));
+  }
 
+  @Test
+  public void reserveTest() {
+
+    home = new Home();
+
+    HotelDetails hotelPage = home.header()
+            .clickHotel()
+            .destination("Medellin")
+            .checkIn(10)
+            .checkOut(0)
+            .selectAdults(1)
+            .search()
+            .clickOverSearchResult(0);
+
+    hotelPage.changeWindow(2);
+
+    PayPage payPage = hotelPage.clickOnItem(1);
+
+    Assert.assertTrue(payPage.hasCardHolderName());
+    Assert.assertTrue(payPage.hasCreditCardNumber());
+    Assert.assertTrue(payPage.hasMonthSelector());
+    Assert.assertTrue(payPage.hasExpirationYear());
+    Assert.assertTrue(payPage.hasSecurityCode());
+    Assert.assertTrue(payPage.hasZipCode());
   }
 
 }

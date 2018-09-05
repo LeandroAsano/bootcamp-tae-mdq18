@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
@@ -32,6 +34,12 @@ public final class Waits {
     return waiting().until(visibilityOf(webElement));
   }
 
+  public static void notVisible(WebElement webElement) { waiting().until(invisibilityOf(webElement)); }
+
+  public static List<WebElement> areVisible(List<WebElement> webElements){
+    return waiting().until(visibilityOfAllElements(webElements));
+  }
+
   /**
    * Verifies if the expected text is present in the element.
    *
@@ -46,5 +54,7 @@ public final class Waits {
   private static WebDriverWait waiting() {
     return getDriver().getWebDriverWait();
   }
+
+  public static void hasWindows(int windows) { waiting().until(numberOfWindowsToBe(windows)); }
 
 }

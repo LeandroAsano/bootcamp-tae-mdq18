@@ -15,7 +15,7 @@ public class Hotel extends WebPage {
     @FindBy(id = "hotel-destination-hlp")
     private WebElement destinationInput;
 
-    @FindBy(className = "Close")
+    @FindBy(css = "footer a.close")
     private WebElement close;
 
     @FindBy(id = "hotel-checkin-hlp")

@@ -7,16 +7,22 @@ import pages.HotelDetails;
 
 public class CardHotel extends WebComponent {
 
-    @FindBy(css = "a.flex-link")
+    @FindBy(css = "article h3")
     private WebElement hotelName;
+
+    @FindBy(css = "a.flex-link")
+    private WebElement hotelLink;
 
     public CardHotel(WebElement container) {
         super(container);
     }
 
     public HotelDetails clickHotelName(){
-        click(hotelName);
-
+        click(hotelLink);
         return new HotelDetails();
+    }
+
+    public String getHotelName() {
+        return getText(hotelName);
     }
 }
