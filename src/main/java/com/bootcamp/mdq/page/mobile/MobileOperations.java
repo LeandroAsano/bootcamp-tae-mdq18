@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.touch.TouchActions;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static com.bootcamp.mdq.waits.Waits.isClickable;
+import static com.bootcamp.mdq.waits.Waits.isVisible;
 
 public abstract class MobileOperations extends CommonOperations {
 
@@ -28,6 +29,17 @@ public abstract class MobileOperations extends CommonOperations {
   protected void tap(MobileElement mobileElement) {
     isClickable(mobileElement);
     touchActions().singleTap(mobileElement);
+  }
+
+  /**
+   * Get text from a mobile element
+   *
+   * @param mobileElement the {@link MobileElement}
+   * @return the text contained
+   */
+  protected String getText(MobileElement mobileElement) {
+    isVisible(mobileElement);
+    return mobileElement.getText();
   }
 
   private TouchActions touchActions() {
