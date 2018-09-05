@@ -36,8 +36,8 @@ public class DatePicker extends WebComponent {
         year = Integer.parseInt(arr[2]);
     }
 
-    public DatePicker selectDate(String date){
-        setDate(date);
+    public DatePicker selectDate(){
+
 
         return this;
     }

@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.tests.cheaptickets;
+package com.bootcamp.mdq.webTests.cheaptickets;
 
 import com.bootcamp.mdq.pages.components.HotelCard;
 import com.bootcamp.mdq.pages.home.Home;
