@@ -46,7 +46,7 @@ public class StopWatch extends MobilePage {
         List<String> textSplit = Arrays.stream(stopWatchText.split("\\s+")).collect(Collectors.toList());
         long minutes = Long.valueOf(textSplit.get(0));
         long seconds = Long.valueOf(textSplit.get(2));
-        return minutes + seconds;
+        return (minutes * 60) + seconds;
     }
 
 }
