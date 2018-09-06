@@ -45,6 +45,16 @@ public abstract class MobileOperations extends CommonOperations {
     return mobileElement.getText();
   }
 
+  /**
+   * Get the value of attribute content-desc from element
+   * @param mobileElement the {@link MobileElement}
+   * @return the value of the content-desc
+   */
+  protected String getContentDesc(MobileElement mobileElement) {
+    isVisible(mobileElement);
+    return mobileElement.getAttribute("contentDescription");
+  }
+
   private TouchActions touchActions() {
     return new TouchActions(getDriver().getWebDriver());
   }

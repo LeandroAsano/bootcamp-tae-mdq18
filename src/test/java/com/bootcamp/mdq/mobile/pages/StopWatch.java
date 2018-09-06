@@ -3,11 +3,12 @@ package com.bootcamp.mdq.mobile.pages;
 import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.CacheLookup;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StopWatch extends MobilePage {
@@ -15,6 +16,10 @@ public class StopWatch extends MobilePage {
     @CacheLookup
     @AndroidFindBy(accessibility = "Start")
     private MobileElement startStopWatchButton;
+
+    @CacheLookup
+    @AndroidFindBy(accessibility = "Stop")
+    private MobileElement stopStopWatchButton;
 
     @CacheLookup
     @AndroidFindBy(id = "stopwatch_time_text")
@@ -33,14 +38,16 @@ public class StopWatch extends MobilePage {
             e.printStackTrace();
         }
 
-        click(startStopWatchButton);
+        click(stopStopWatchButton);
         return this;
     }
 
     public long getTimeInSeconds() {
-        long time = 0;
-        String stopWatchText = getText(stopWatchTimeText);
-        Stream<String> textSplit = Arrays.stream(stopWatchText.split("\\s+"));
+        String stopWatchText = getContentDesc(stopWatchTimeText);
+        List<String> textSplit = Arrays.stream(stopWatchText.split("\\s+")).collect(Collectors.toList());
+        long minutes = Long.valueOf(textSplit.get(0));
+        long seconds = Long.valueOf(textSplit.get(2));
+        return minutes + seconds;
     }
 
 }
