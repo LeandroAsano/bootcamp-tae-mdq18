@@ -4,6 +4,9 @@ import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Matias on 06/09/2018.
  */
@@ -29,7 +32,8 @@ public class Stopwatch extends MobilePage {
     }
 
     public String getTimeText(){
-        return timeText.getText();
+        return timeText.getAttribute("contentDescription").replaceAll("[a-zA-z]","").replace(" ","");
+
     }
 
     public Stopwatch stopAfterMiliseconds(long miliseconds){

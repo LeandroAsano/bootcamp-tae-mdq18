@@ -6,6 +6,7 @@ import com.bootcamp.mdq.mobile.pages.components.CalculatorPadOperators;
 import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.support.CacheLookup;
 
 public class Calculator extends MobilePage {
 
@@ -18,35 +19,39 @@ public class Calculator extends MobilePage {
     @AndroidFindBy(id = "display")
     private MobileElement calculatorDisplay;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_div")
     private MobileElement divide;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_sub")
     private MobileElement minus;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_add")
     private MobileElement plus;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_mul")
     private MobileElement times;
 
     public Calculator divide(){
-        divide.click();
+        click(divide);
         return this;
     }
 
     public Calculator plus(){
-        plus.click();
+        click(plus);
         return this;
     }
 
     public Calculator times(){
-        times.click();
+        click(times);
         return this;
     }
 
     public Calculator minus(){
-        minus.click();
+        click(minus);
         return this;
     }
 
@@ -63,40 +68,51 @@ public class Calculator extends MobilePage {
         return new CalculatorDisplay(calculatorDisplay);
     }
     */
-
+    @CacheLookup
     @AndroidFindBy(id = "digit_1")
     private MobileElement digit1;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_2")
     private MobileElement digit2;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_3")
     private MobileElement digit3;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_4")
     private MobileElement digit4;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_5")
     private MobileElement digit5;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_6")
     private MobileElement digit6;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_7")
     private MobileElement digit7;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_8")
     private MobileElement digit8;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_9")
     private MobileElement digit9;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_0")
     private MobileElement digit0;
 
+    @CacheLookup
     @AndroidFindBy(id = "dec_point")
     private MobileElement point;
 
+    @CacheLookup
     @AndroidFindBy(id = "eq")
     private MobileElement equals;
 
@@ -144,7 +160,7 @@ public class Calculator extends MobilePage {
     }
 
     public Calculator equals(){
-        equals.click();
+        click(equals);
         return this;
     }
 
@@ -155,7 +171,7 @@ public class Calculator extends MobilePage {
     private MobileElement result;
 
     public String getFormula(){
-        return formula.getText();
+        return getText(formula);
     }
 
 }

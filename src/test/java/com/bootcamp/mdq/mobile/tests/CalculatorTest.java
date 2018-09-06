@@ -19,14 +19,14 @@ public class CalculatorTest extends BaseTestSuite{
     }
 
     @Test
-    public void test(){
+    public void plusTest(){
       String formula = calculator.tapIntNumber(10000)
               .plus()
               .tapIntNumber(5000)
               .equals()
               .getFormula();
 
-        Assert.assertEquals("5",formula);
+        Assert.assertEquals("15000",formula);
 
     }
 }
