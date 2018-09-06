@@ -1,7 +1,7 @@
-package pages;
+package web.pages;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import components.HeaderBar;
+import web.components.HeaderBar;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,9 +13,10 @@ public class Home extends WebPage {
     private HeaderBar header;
 
     public Home (){
-        header = new HeaderBar(headerContainer);
         goTo("https://cheaptickets.com");
+        header = new HeaderBar(headerContainer);
     }
+
     public HeaderBar header(){
         return header;
     }

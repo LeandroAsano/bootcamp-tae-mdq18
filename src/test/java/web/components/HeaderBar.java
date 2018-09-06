@@ -1,11 +1,11 @@
-package components;
+package web.components;
 
 
 import com.bootcamp.mdq.page.web.WebComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.Flights;
-import pages.Hotel;
+import web.pages.Flights;
+import web.pages.Hotel;
 
 public class HeaderBar extends WebComponent {
 

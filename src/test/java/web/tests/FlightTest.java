@@ -1,10 +1,10 @@
-package com.bootcamp.mdq.tests;
+package web.tests;
 
 
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Test;
-import pages.Home;
-import pages.ResultsFlights;
+import web.pages.Home;
+import web.pages.ResultsFlights;
 
 public class FlightTest extends BaseTestSuite {
 

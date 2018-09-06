@@ -1,14 +1,17 @@
 package com.bootcamp.mdq.page.web;
 
+import com.bootcamp.mdq.page.CommonOperations;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
-import static com.bootcamp.mdq.waits.Waits.*;
+import static com.bootcamp.mdq.waits.Waits.hasWindows;
+import static com.bootcamp.mdq.waits.Waits.isClickable;
+import static com.bootcamp.mdq.waits.Waits.isTextPresent;
 
-public abstract class WebOperations {
+public abstract class WebOperations extends CommonOperations {
 
   /**
    * Navigates to the URL.
@@ -26,14 +29,6 @@ public abstract class WebOperations {
     getDriver().getWebDriver().navigate().refresh();
   }
 
-  /**
-   * Clicks on the element.
-   *
-   * @param webElement the {@link WebElement}
-   */
-  protected void click(WebElement webElement) {
-    isClickable(webElement).click();
-  }
 
   /**
    * Types on the element.
@@ -44,16 +39,6 @@ public abstract class WebOperations {
   protected boolean type(WebElement webElement, String text) {
     isClickable(webElement).sendKeys(text);
     return isTextPresent(webElement, text);
-  }
-
-  /**
-   * Gets the text from the web element.
-   *
-   * @param webElement the {@link WebElement}
-   * @return the text
-   */
-  protected String getText(WebElement webElement) {
-    return isVisible(webElement).getText();
   }
 
   /**

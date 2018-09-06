@@ -1,7 +1,7 @@
-package pages;
+package web.pages;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import components.CardHotel;
+import web.components.CardHotel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

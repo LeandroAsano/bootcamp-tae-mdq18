@@ -1,15 +1,12 @@
-package com.bootcamp.mdq.tests;
+package web.tests;
 
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import pages.Home;
-import pages.HotelDetails;
-import pages.PayPage;
-import pages.ResultsSearchHotel;
-
-import static com.bootcamp.mdq.driver.Drivers.getDriver;
+import web.pages.Home;
+import web.pages.HotelDetails;
+import web.pages.PayPage;
+import web.pages.ResultsSearchHotel;
 
 public class CheapTicketsTest extends BaseTestSuite {
 
@@ -18,7 +15,7 @@ public class CheapTicketsTest extends BaseTestSuite {
   @Test
   public void myTest() {
 
-    WebDriver webDriver = getDriver().getWebDriver();
+    //WebDriver webDriver = getDriver().getWebDriver();
 
     home = new Home();
 

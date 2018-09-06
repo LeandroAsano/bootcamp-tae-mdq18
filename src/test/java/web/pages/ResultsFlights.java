@@ -1,4 +1,4 @@
-package pages;
+package web.pages;
 
 import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.support.FindBy;

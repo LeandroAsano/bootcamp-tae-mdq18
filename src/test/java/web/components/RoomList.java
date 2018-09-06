@@ -1,9 +1,9 @@
-package components;
+package web.components;
 
 import com.bootcamp.mdq.page.web.WebComponent;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pages.PayPage;
+import web.pages.PayPage;
 
 public class RoomList extends WebComponent {
 
