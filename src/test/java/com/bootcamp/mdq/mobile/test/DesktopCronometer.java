@@ -1,12 +1,10 @@
 package com.bootcamp.mdq.mobile.test;
 
-import com.bootcamp.mdq.mobile.pages.DesktopClock;
-import com.bootcamp.mdq.mobile.pages.StopWatch;
+import com.bootcamp.mdq.mobile.pages.cronometer.DesktopClock;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.Stopwatch;
 
 import java.util.concurrent.ThreadLocalRandom;
 

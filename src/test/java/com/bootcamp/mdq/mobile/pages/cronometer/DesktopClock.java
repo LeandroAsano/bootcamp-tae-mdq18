@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.mobile.pages;
+package com.bootcamp.mdq.mobile.pages.cronometer;
 
 import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;
