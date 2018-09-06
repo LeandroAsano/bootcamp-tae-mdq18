@@ -15,15 +15,14 @@ public class FlightTest extends BaseTestSuite {
 
        home=new Home();
 
-       FlightsResults flights=home.navegationBar().clickOnFligths().
-        typeOrigin("LAS")
+       FlightsResults flights=home.navegationBar()
+                .clickOnFligths()
+                .typeOrigin("LAS")
                 .typeDestination("LAX")
-                .chooseAdepertureDate(5)
-                .chooseAreturningDate(10)
+                .chooseAdepertureDate(2018, 12, 9)
+                .chooseAreturningDate(2019, 1, 10)
                 .setNumberOfAdults("1")
                 .clickOnSearch();
-
-
 
     }
 

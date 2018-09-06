@@ -23,10 +23,6 @@ public class Hotels extends WebPage {
     @FindBy(id = "package-rooms-hp-package")
     private WebElement amountOfRooms;
 
-    // Deberia tener el selector directamente como atributo o seguir trabajando con el webElement?
-    // Sino ttendria que llamar al DriverManage...
-    // private  Select amountOfRooms;
-
     @FindBy(id = "hotel-1-adults-hlp")
     private WebElement amountOfAdults;
 
@@ -76,23 +72,28 @@ public class Hotels extends WebPage {
     }
 
 
+
     public DatePicker clickOnCheckIn(){
         click(checkInDate);
         checkInDate.clear();
-        return new DatePicker();
+        return new DatePicker(15);
     }
 
-    public DatePicker clickOnCheckOut(){
+    public DatePicker clickondateout(){
         click(checkOutDate);
         checkOutDate.clear();
-        return new DatePicker();
+        return new DatePicker(0);
     }
 
-    public Hotels pickAdate(){
-        DatePicker aux=clickOnCheckIn();
-        aux.clickOnAValidDateOnTheCalendar(5);
-        aux= clickOnCheckOut();
-        aux.clickOnAValidDateOnTheCalendar(15);
+    public Hotels checkInDate(int year, int month, int day){
+        DatePicker calendar=clickOnCheckIn();
+        calendar.pickADayOnTheCalendar(year, month, day, true);
+        return this;
+    }
+
+    public Hotels checkOutDate(int year, int month, int day){
+        DatePicker calendar=clickondateout();
+        calendar.pickADayOnTheCalendar(year, month, day, false);
         return this;
     }
 

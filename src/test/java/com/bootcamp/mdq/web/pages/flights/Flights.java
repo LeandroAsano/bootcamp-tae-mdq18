@@ -2,6 +2,7 @@ package com.bootcamp.mdq.web.pages.flights;
 
 import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.web.pages.components.DatePicker;
+import com.bootcamp.mdq.web.pages.hotel.Hotels;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -21,7 +22,7 @@ public class Flights extends WebPage {
     @FindBy (id="flight-adults-flp")
     private WebElement numberOfAdults;
 
-    @FindBy(css = "btn-primary btn-action gcw-submit ")
+    @FindBy(css = "btn-primary.btn-action.gcw-submit")
     private WebElement searchButton;
 
 
@@ -30,24 +31,24 @@ public class Flights extends WebPage {
     }
 
     public Flights typeOrigin(String origin){
-        //type(fromInput, origin);
+        type(fromInput, origin);
         return this;
     }
 
     public Flights typeDestination(String destination){
-       // type(toInput, destination);
-        return this;
-    }
-    //Days to add to today date
-    public Flights chooseAdepertureDate(int days){
-        DatePicker date=clickOnDepeture();
-        date.clickOnAValidDateOnTheCalendar(days);
+       type(toInput, destination);
         return this;
     }
 
-    public Flights chooseAreturningDate(int days){
-        DatePicker date=clickOnReturning();
-        date.clickOnAValidDateOnTheCalendar(days);
+    public Flights chooseAdepertureDate(int year, int month, int day){
+        DatePicker calendar=clickOnDepeture();
+        calendar.pickADayOnTheCalendar(year, month, day, true);
+        return this;
+    }
+
+    public Flights chooseAreturningDate(int year, int month, int day){
+        DatePicker calendar= clickOnReturning();
+        calendar.pickADayOnTheCalendar(year, month, day, false);
         return this;
     }
 
@@ -59,13 +60,13 @@ public class Flights extends WebPage {
     private DatePicker clickOnDepeture(){
         click(deperturingDate);
         deperturingDate.clear();
-        return new DatePicker();
+        return new DatePicker(15);
     }
 
     private DatePicker clickOnReturning(){
         click(returingDate);
         returingDate.clear();
-        return new DatePicker();
+        return new DatePicker(15);
     }
 
     public FlightsResults clickOnSearch(){

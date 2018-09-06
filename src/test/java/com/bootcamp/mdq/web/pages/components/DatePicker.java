@@ -12,20 +12,36 @@ import java.util.List;
 //deberia extender de baseComponent pero no encontaba forma de pasarle el contenedor al constructor y que funcionara
 public class DatePicker extends WebPage {
 
+    private int numberOfAvailableMonths;
+
     //next month button
     @FindBy(className = "datepicker-next")
     private WebElement nextButton;
+
 
     //Available days of month
     @FindBy(className = "datepicker-cal-date")
     private List<WebElement> dayOfMonth;
 
-    @FindBy(className = "datepicker-close-btn")
-    private WebElement close;
 
-
-    public DatePicker() {
+    /**
+     * @param numberOfAvailableMonths is the number of times that i can click on the next button (it cant be usefull for check the availabe date)
+     */
+    public DatePicker(int numberOfAvailableMonths) {
         super();
+        this.numberOfAvailableMonths = numberOfAvailableMonths;
+    }
+
+    private DatePicker clickOnNext() {
+        click(nextButton);
+        return this;
+    }
+
+    private DatePicker clickOnNext(int times) {
+        for (int x = 0; x < times; x++) {
+            clickOnNext();
+        }
+        return this;
     }
 
     /***
@@ -33,29 +49,46 @@ public class DatePicker extends WebPage {
      * @return The available dates
      */
 
-    public List<String> getDaysOfMonth(){
-        List<String> dates=new ArrayList<String>();
-        for (WebElement day: dayOfMonth){
+    private List<String> getDaysOfMonth() {
+        List<String> dates = new ArrayList<String>();
+        for (WebElement day : dayOfMonth) {
             dates.add(day.getText());
         }
         return dates;
     }
 
-    public void pickADayOnTheCalendar(int month, int day){
-        List<String> aux= getDaysOfMonth();
-        String[] months={"January","February","March","April","May","June","July","August","September","October","November","December"};
-        click(dayOfMonth.get(aux.indexOf(months[month].concat("\n").concat(String.valueOf(day)))));
-    }
-
     /**
+     * Choose a date on the calendar always after to today date! Don´t check if that date is available
      *
-     * @param range is the number of days for adding to the today´s date
+     * @param month Month to select
+     * @param day   Day of the month to select
+     * @return Da
      */
-    public void clickOnAValidDateOnTheCalendar(int range){
 
-        Calendar today=Calendar.getInstance();
-        today.add(Calendar.DAY_OF_MONTH, range);
-        pickADayOnTheCalendar(today.get(Calendar.MONTH), today.get(Calendar.DAY_OF_MONTH));
+    public DatePicker pickADayOnTheCalendar(int year, int month, int day, boolean nextButton) {
+
+        Calendar today = Calendar.getInstance();
+        int actualMonth = today.get(Calendar.MONTH);
+        int actualYear = today.get(Calendar.YEAR);
+        int diference = 0;
+
+        if (nextButton) {
+            if (actualYear <= year) {
+                diference = month - (actualMonth + 1);
+            } else {
+                diference = (11 - actualMonth) + (month - 1);
+
+            }
+        } else {
+            diference = 0;
+        }
+
+        clickOnNext(diference);
+        List<String> aux = getDaysOfMonth();
+        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        click(dayOfMonth.get(aux.indexOf(months[month - 1].concat("\n").concat(String.valueOf(day)))));
+        return this;
     }
+
 
 }

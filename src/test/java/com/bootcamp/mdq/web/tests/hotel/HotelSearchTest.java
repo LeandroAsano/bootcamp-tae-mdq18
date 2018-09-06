@@ -9,6 +9,8 @@ import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Calendar;
+
 
 public class HotelSearchTest extends BaseTestSuite {
 
@@ -23,7 +25,8 @@ public class HotelSearchTest extends BaseTestSuite {
                 .clickOnHotel()
                 .typeHotelName("Miami Beach")
                 .closeSuggestion()
-                .pickAdate()
+                .checkInDate(2018, 9,25)
+                .checkOutDate(2018, 10,10)
                 .setAmountOfAdults("4")
                 .setAmountOfChilden("1")
                 .setChildrenAge("7")
@@ -48,7 +51,8 @@ public class HotelSearchTest extends BaseTestSuite {
                 .clickOnHotel()
                 .typeHotelName("Medellin")
                 .closeSuggestion()
-                .pickAdate()
+                .checkInDate(2018, 9,25)
+                .checkOutDate(2018, 10,10)
                 .setAmountOfAdults("1")
                 .clickOnSearch()
                 .clickOnItemOverSearchResult(0);
