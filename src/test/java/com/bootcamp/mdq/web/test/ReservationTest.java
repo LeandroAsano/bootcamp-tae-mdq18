@@ -33,7 +33,8 @@ public class ReservationTest extends BaseTestSuite {
                 .selectHotel()
                 .selectRoom(0)
                 .bookRoom(0)
-                .reserveRoom();
+                .reserveRoom()
+                .payNow();
 
         Assert.assertTrue(valPage.isDisplayedCardHolderNameInput());
         Assert.assertTrue(valPage.isDisplayedCreditCardInput());
