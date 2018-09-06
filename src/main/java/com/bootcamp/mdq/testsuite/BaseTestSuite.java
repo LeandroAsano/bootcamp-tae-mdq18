@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.testsuite;
 
+import com.bootcamp.mdq.platform.Platform;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -9,6 +10,7 @@ import java.net.MalformedURLException;
 
 import static com.bootcamp.mdq.driver.Drivers.dispose;
 import static com.bootcamp.mdq.driver.Drivers.populateDriver;
+
 import static com.bootcamp.mdq.platform.Platform.WEB;
 import static com.bootcamp.mdq.properties.TestProperties.TEST_PROPERTIES;
 import static com.bootcamp.mdq.server.SeleniumStandaloneServer.SERVER;

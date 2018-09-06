@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow;
+package com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents.calendarworkflow;
 
 import java.time.LocalDate;
 

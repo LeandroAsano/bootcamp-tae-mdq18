@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.tests.components;
+package com.bootcamp.mdq.tests.web.components;
 
 /**
  * Created by Yo on 5/9/2018.

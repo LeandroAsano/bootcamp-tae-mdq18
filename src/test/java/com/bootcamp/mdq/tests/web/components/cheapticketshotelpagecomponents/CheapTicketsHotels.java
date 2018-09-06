@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
+package com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents;
 
 import com.bootcamp.mdq.page.web.WebPage;
 

@@ -1,23 +1,22 @@
-package com.bootcamp.mdq.tests.excersise1test;
+package com.bootcamp.mdq.tests.web;
 
-import com.bootcamp.mdq.tests.components.cheapticketshomepagecomponents.CheapTicketsHome;
-import com.bootcamp.mdq.tests.components.cheapticketshotelofferspagecomponents.HotelCard;
-
+import com.bootcamp.mdq.tests.web.components.cheapticketshomepagecomponents.CheapTicketsHome;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class ReservationTest extends BaseTestSuite {
 
     private CheapTicketsHome cheapTicketsHome;
 
     @Test
-    public void reservationTest(){
+    public void reservationTest() {
         cheapTicketsHome = new CheapTicketsHome();
-        HotelCard hotelCard = cheapTicketsHome
-                .initHotelReservationTest().
-                        getGoingToSearchBar().
-                        enterDestinyCity("Miami Beach")
+        String hotelCard = cheapTicketsHome
+                .initHotelReservationTest()
+                .getGoingToSearchBar()
+                .enterDestinyCity("Miami Beach")
                 .calendar(2018, 10, 10, 20)
                 .setCheckInDate()
                 .adultsComboBoxSelector("4")
@@ -27,20 +26,21 @@ public class ReservationTest extends BaseTestSuite {
                 .useSearchBar()
                 .search("Faena Hotel Miami Beach")
                 .clickOnHotelFilterBtn()
-                .getSpecificHotel("Faena Hotel Miami Beach");
+                .getSpecificHotel("Faena Hotel Miami Beach")
+                .getHotelName();
 
-        Assert.assertEquals("Faena Hotel Miami Beach",hotelCard.getName());
+        assertEquals("Faena Hotel Miami Beach", hotelCard);
 /* LA LISTA DE HOTELES NO APARECE EN EL DOM */
     }
 
     @Test
-    public void reservationTest2(){
+    public void reservationTest2() {
         cheapTicketsHome = new CheapTicketsHome();
         cheapTicketsHome
                 .initHotelReservationTest().
                 getGoingToSearchBar().
                 enterDestinyCity("Medellin")
-                .calendar(2018,10,15,20)
+                .calendar(2018, 10, 15, 20)
                 .setCheckInDate()
                 .adultsComboBoxSelector2("1")
                 .clickGoToOffersPage()

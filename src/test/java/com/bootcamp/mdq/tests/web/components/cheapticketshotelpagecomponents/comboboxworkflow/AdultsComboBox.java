@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.comboboxworkflow;
+package com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents.comboboxworkflow;
 
 
-import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.SearchButton;
+import com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents.SearchButton;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

@@ -1,12 +1,11 @@
-package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
+package com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.tests.components.cheapticketshotelofferspagecomponents.CheapTicketsHotelsOffersPage;
-import com.bootcamp.mdq.tests.components.cheapticketshotelofferspagecomponents.HotelCardList;
+import com.bootcamp.mdq.tests.web.components.cheapticketshotelofferspagecomponents.CheapTicketsHotelsOffersPage;
+import com.bootcamp.mdq.tests.web.components.cheapticketshotelofferspagecomponents.HotelCardList;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static com.bootcamp.mdq.js.Javascript.click;
 import static com.bootcamp.mdq.waits.Waits.isNotVisible;
 import static com.bootcamp.mdq.waits.Waits.jsWait;
 import static com.bootcamp.mdq.waits.Waits.pageReady;

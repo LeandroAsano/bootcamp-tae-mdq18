@@ -1,12 +1,12 @@
 package com.bootcamp.mdq.waits;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
@@ -35,6 +35,10 @@ public final class Waits {
    */
   public static WebElement isVisible(WebElement webElement) {
     return waiting().until(visibilityOf(webElement));
+  }
+
+  public static List<WebElement> areVisible(List<WebElement> elements) {
+    return waiting().until(visibilityOfAllElements(elements));
   }
 
   public static void isNotVisible(WebElement webElement) {

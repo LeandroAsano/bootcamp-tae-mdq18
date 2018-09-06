@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.tests.components.cheapticketshomepagecomponents;
+package com.bootcamp.mdq.tests.web.components.cheapticketshomepagecomponents;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.CheapTicketsHotels;
+import com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents.CheapTicketsHotels;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

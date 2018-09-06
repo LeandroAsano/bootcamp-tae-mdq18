@@ -1,16 +1,14 @@
-package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
+package com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents;
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow.StayTime;
-import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.calendarworkflow.CalendarPage;
-import com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents.comboboxworkflow.AdultsComboBox;
+import com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents.calendarworkflow.StayTime;
+import com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents.calendarworkflow.CalendarPage;
+import com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents.comboboxworkflow.AdultsComboBox;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
 import java.time.LocalDate;
-
-import static com.bootcamp.mdq.js.Javascript.click;
 
 
 /**

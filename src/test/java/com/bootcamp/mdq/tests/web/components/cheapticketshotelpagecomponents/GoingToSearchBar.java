@@ -1,9 +1,9 @@
-package com.bootcamp.mdq.tests.components.cheapticketshotelpagecomponents;
+package com.bootcamp.mdq.tests.web.components.cheapticketshotelpagecomponents;
 
 import com.bootcamp.mdq.page.web.WebPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import com.bootcamp.mdq.page.web.WebOperations;
+
 import java.time.LocalDate;
 
 
