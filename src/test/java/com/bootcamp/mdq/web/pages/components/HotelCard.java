@@ -1,8 +1,8 @@
-package com.bootcamp.mdq.pages.components;
+package com.bootcamp.mdq.web.pages.components;
 
 
 import com.bootcamp.mdq.page.web.WebComponent;
-import com.bootcamp.mdq.pages.hotel.HotelPage;
+import com.bootcamp.mdq.web.pages.hotel.HotelPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 public class HotelCard extends WebComponent {

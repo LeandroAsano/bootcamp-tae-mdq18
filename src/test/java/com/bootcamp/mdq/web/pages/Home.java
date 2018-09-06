@@ -1,8 +1,8 @@
-package com.bootcamp.mdq.pages;
+package com.bootcamp.mdq.web.pages;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.pages.components.NavegationBar;
+import com.bootcamp.mdq.web.pages.components.NavegationBar;
 
 public class Home extends WebPage {
 

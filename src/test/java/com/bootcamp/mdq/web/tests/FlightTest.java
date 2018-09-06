@@ -1,8 +1,7 @@
-package com.bootcamp.mdq.tests;
+package com.bootcamp.mdq.web.tests;
 
-import com.bootcamp.mdq.pages.Home;
-import com.bootcamp.mdq.pages.flights.Flights;
-import com.bootcamp.mdq.pages.flights.FlightsResults;
+import com.bootcamp.mdq.web.pages.Home;
+import com.bootcamp.mdq.web.pages.flights.FlightsResults;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Test;
 

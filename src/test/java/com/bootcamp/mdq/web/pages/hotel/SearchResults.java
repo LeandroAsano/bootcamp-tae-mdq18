@@ -1,9 +1,9 @@
-package com.bootcamp.mdq.pages.hotel;
+package com.bootcamp.mdq.web.pages.hotel;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.pages.components.NavegationBar;
-import com.bootcamp.mdq.pages.components.HotelCard;
+import com.bootcamp.mdq.web.pages.components.NavegationBar;
+import com.bootcamp.mdq.web.pages.components.HotelCard;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

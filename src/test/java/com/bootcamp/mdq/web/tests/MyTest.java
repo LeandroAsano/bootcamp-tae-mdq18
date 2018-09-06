@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.tests;
+package com.bootcamp.mdq.web.tests;
 
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Test;

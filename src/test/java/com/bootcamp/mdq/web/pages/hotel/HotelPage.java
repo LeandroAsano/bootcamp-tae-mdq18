@@ -1,8 +1,8 @@
-package com.bootcamp.mdq.pages.hotel;
+package com.bootcamp.mdq.web.pages.hotel;
 
 
 import com.bootcamp.mdq.page.web.WebPage;
-import com.bootcamp.mdq.pages.components.ItemRoomList;
+import com.bootcamp.mdq.web.pages.components.ItemRoomList;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 

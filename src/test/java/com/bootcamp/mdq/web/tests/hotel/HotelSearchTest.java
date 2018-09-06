@@ -1,10 +1,10 @@
-package com.bootcamp.mdq.tests.hotel;
+package com.bootcamp.mdq.web.tests.hotel;
 
 
-import com.bootcamp.mdq.pages.Home;
-import com.bootcamp.mdq.pages.hotel.HotelPage;
-import com.bootcamp.mdq.pages.hotel.PayBookingPage;
-import com.bootcamp.mdq.pages.hotel.SearchResults;
+import com.bootcamp.mdq.web.pages.Home;
+import com.bootcamp.mdq.web.pages.hotel.HotelPage;
+import com.bootcamp.mdq.web.pages.hotel.PayBookingPage;
+import com.bootcamp.mdq.web.pages.hotel.SearchResults;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Test;
