@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.mobile.pages.cronometer;
+package com.bootcamp.mdq.mobile.pages.chronometer;
 
 import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;
@@ -11,7 +11,7 @@ public class DesktopClock extends MobilePage {
     @AndroidFindBy(accessibility = "Stopwatch")
     private MobileElement stopWatch;
 
-    public StopWatch clickStopWatchTab() {
+    public StopWatch switchToStopWatch() {
         click(stopWatch);
         return new StopWatch();
     }

@@ -24,6 +24,11 @@ public abstract class CommonOperations {
     isClickable(webElement).click();
   }
 
+  protected void clickVisibleElement(WebElement webElement) {
+    isVisible(webElement);
+    isClickable(webElement).click();
+  }
+
   /**
    * Gets the text from the com.bootcamp.mdq.web element.
    *

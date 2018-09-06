@@ -1,6 +1,6 @@
 package com.bootcamp.mdq.mobile.test;
 
-import com.bootcamp.mdq.mobile.pages.cronometer.DesktopClock;
+import com.bootcamp.mdq.mobile.pages.chronometer.DesktopClock;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,29 +8,29 @@ import org.junit.Test;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class DesktopCronometer extends BaseTestSuite {
+public class DesktopChronometer extends BaseTestSuite {
 
-    private DesktopClock deskCronometer;
+    private DesktopClock clock;
 
 
     @Before
-    public void setupDesktopCronometer() {
-        this.deskCronometer = new DesktopClock();
+    public void setupDesktopChronometer() {
+        this.clock = new DesktopClock();
     }
 
     /**
-     * Starts the cronometer and stops it between a range of time. Then verifies if the time in the cronometer
+     * Starts the chronometer and stops it between a range of time. Then verifies if the time in the chronometer
      * is less than the max of the defined range.
      */
     @Test
-    public void startStopCronometer() {
+    public void startStopChronometer() {
 
         int expectedTimeSeconds = 25;
 
-        // Create a random time in seconds to stop the cronometer given min and max bounds
+        // Create a random time in seconds to stop the chronometer given min and max bounds
         int randomTime = ThreadLocalRandom.current().nextInt(20, expectedTimeSeconds + 1);
 
-        long actualTimeSeconds = deskCronometer.clickStopWatchTab()
+        long actualTimeSeconds = clock.switchToStopWatch()
                 .startStopWatch()
                 .waitAndStopWatch(randomTime)
                 .getTimeInSeconds();
