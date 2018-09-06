@@ -17,9 +17,9 @@ public class CalculatorBasicOperations extends BaseTestSuite {
 
     @Test
     public void performBasicOperations() {
-        double result = calculator.enterIntegerNumber(10000)
+        double result = calculator.enterNumber("10000")
                 .selectOperation("+")
-                .enterIntegerNumber(5000)
+                .enterNumber("5000")
                 .getResult();
 
         Assert.assertTrue(result == 15000);

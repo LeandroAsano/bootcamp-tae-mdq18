@@ -63,21 +63,10 @@ public class Calculator extends MobilePage {
         return this;
     }
 
-    public Calculator enterIntegerNumber(double number) {
-
-        // Remove floating point from double value
-        String integerNumber = String.valueOf(number).replaceAll("\\.0*$", "");
+    public Calculator enterNumber(String number) {
 
         // Split into single numbers and for each one click corresponding button
-        Arrays.stream(integerNumber.split("(?!^)")).forEach(this::tapDigit);
-
-        return this;
-    }
-
-    public Calculator enterFloatingPointNumber(double number) {
-
-        // Split into single numbers and for each one click corresponding button
-        Arrays.stream(String.valueOf(number).split("")).forEach(this::tapDigit);
+        Arrays.stream(number.split("")).forEach(this::tapDigit);
 
         return this;
     }
