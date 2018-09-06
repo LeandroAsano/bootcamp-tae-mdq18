@@ -20,9 +20,9 @@ public class CalculatorTest extends BaseTestSuite{
 
     @Test
     public void test(){
-      String formula = calculator.tapIntNumber(2)
+      String formula = calculator.tapIntNumber(10000)
               .plus()
-              .tapIntNumber(3)
+              .tapIntNumber(5000)
               .equals()
               .getFormula();
 
