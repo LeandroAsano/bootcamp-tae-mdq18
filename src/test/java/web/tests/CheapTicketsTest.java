@@ -33,7 +33,7 @@ public class CheapTicketsTest extends BaseTestSuite {
             .serchHotelName("Faena Hotel Miami Beach")
             .findHotel();
 
-    Assert.assertTrue("Flights are displayed",result.results("Faena Hotel Miami Beach"));
+    Assert.assertTrue("Flights are displayed",result.equals("Faena Hotel Miami Beach"));
   }
 
   @Test

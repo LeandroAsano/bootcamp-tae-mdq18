@@ -3,132 +3,150 @@ package mobile.pages;
 import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.support.CacheLookup;
 
 public class Calculator extends MobilePage {
 
     //OPERATIONS*****************
-
+    @CacheLookup
     @AndroidFindBy(id = "display")
     private MobileElement display;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_div")
     private MobileElement divide;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_sub")
     private MobileElement minus;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_add")
     private MobileElement plus;
 
+    @CacheLookup
     @AndroidFindBy(id = "op_mul")
     private MobileElement times;
 
     //DIGITS PAD********************
-
+    @CacheLookup
     @AndroidFindBy(id = "digit_1")
     private MobileElement digit1;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_2")
     private MobileElement digit2;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_3")
     private MobileElement digit3;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_4")
     private MobileElement digit4;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_5")
     private MobileElement digit5;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_6")
     private MobileElement digit6;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_7")
     private MobileElement digit7;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_8")
     private MobileElement digit8;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_9")
     private MobileElement digit9;
 
+    @CacheLookup
     @AndroidFindBy(id = "digit_0")
     private MobileElement digit0;
 
+    @CacheLookup
     @AndroidFindBy(id = "dec_point")
     private MobileElement point;
 
+    @CacheLookup
     @AndroidFindBy(id = "eq")
     private MobileElement equals;
 
     //RESULT********************
 
+    @CacheLookup
     @AndroidFindBy(id = "formula")
     private MobileElement formula;
 
+    @CacheLookup
     @AndroidFindBy(id = "result")
     private MobileElement result;
 
 
     public Calculator plus(){
-        plus.click();
+        click(plus);
         return this;
     }
 
     public Calculator minus(){
-        minus.click();
+        click(minus);
         return this;
     }
 
     public Calculator divide(){
-        divide.click();
+        click(divide);
         return this;
     }
 
     public Calculator times(){
-        times.click();
+        click(times);
         return this;
     }
 
     public Calculator equals(){
-        equals.click();
+        click(equals);
         return this;
     }
 
     public void tapDigit(char digit){
         switch (digit){
             case '0':
-                digit0.click();
+                click(digit0);
                 break;
             case '1':
-                digit1.click();
+                click(digit1);
                 break;
             case '2':
-                digit2.click();
+                click(digit2);
                 break;
             case '3':
-                digit3.click();
+                click(digit3);
                 break;
             case '4':
-                digit4.click();
+                click(digit4);
                 break;
             case '5':
-                digit5.click();
+                click(digit5);
                 break;
             case '6':
-                digit6.click();
+                click(digit6);
                 break;
             case '7':
-                digit7.click();
+                click(digit7);
                 break;
             case '8':
-                digit8.click();
+                click(digit8);
                 break;
             case '9':
-                digit9.click();
+                click(digit9);
                 break;
             case '.':
-                point.click();
+                click(point);
         }
     }
 
@@ -140,7 +158,7 @@ public class Calculator extends MobilePage {
     }
 
     public String getFormula(){
-        return formula.getText();
+        return getText(formula);
     }
 
 }

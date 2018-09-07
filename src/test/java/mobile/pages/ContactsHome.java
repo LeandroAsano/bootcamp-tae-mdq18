@@ -5,15 +5,14 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.support.CacheLookup;
 
-public class Clock extends MobilePage {
+public class ContactsHome extends MobilePage {
 
     @CacheLookup
-    @AndroidFindBy(accessibility = "Stopwatch")
-    public MobileElement stopwatch;
+    @AndroidFindBy(id ="floating_action_button_container")
+    private MobileElement addContactBtn;
 
-
-    public Chronometer openChonometer(){
-        click(stopwatch);
-        return new Chronometer();
+    public SaveModal newContact(){
+        click(addContactBtn);
+        return new SaveModal();
     }
 }

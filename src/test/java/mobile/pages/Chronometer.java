@@ -3,29 +3,32 @@ package mobile.pages;
 import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.support.CacheLookup;
 
 public class Chronometer extends MobilePage {
 
+    @CacheLookup
     @AndroidFindBy (accessibility = "Start")
     private MobileElement startBtn;
 
+    @CacheLookup
     @AndroidFindBy(accessibility = "Stop")
     public MobileElement stopBtn;
 
+    @CacheLookup
     @AndroidFindBy(id="stopwatch_time_text")
     private MobileElement chronometerText;
-
 
     public Chronometer() {
     }
 
     public Chronometer start(){
-        startBtn.click();
+        click(startBtn);
         return this;
     }
 
     public Chronometer stop(){
-        stopBtn.click();
+        click(stopBtn);
         return this;
     }
 
@@ -40,6 +43,6 @@ public class Chronometer extends MobilePage {
     }
 
     public String getChronometerText(){
-        return chronometerText.getText();
+        return chronometerText.getAttribute("contentDescription").replaceAll("[a-zA-Z]","").replaceAll(" ", "");
     }
 }

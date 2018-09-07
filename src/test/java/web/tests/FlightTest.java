@@ -2,6 +2,7 @@ package web.tests;
 
 
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
+import org.junit.Assert;
 import org.junit.Test;
 import web.pages.Home;
 import web.pages.ResultsFlights;
@@ -16,13 +17,24 @@ public class FlightTest extends BaseTestSuite {
 
         home=new Home();
 
-        ResultsFlights flights=home.header().clickFligths()
+        ResultsFlights flights=home.header()
+                .clickFligths()
                 .typeOrigin("LAS")
                 .typeDestination("LAX")
                 .depertureDate(10)
-                .returningDate(20)
+                .returningDate(0)
                 .setAdults(1)
-                .searchFlight();
+                .searchFlight()
+                .getResultList()
+                .selectCard(0)
+                .selectFlight()
+                .getResultList()
+                .selectCard(0)
+                .selectFlight();
+
+        flights.changeWindow(2);
+
+        Assert.assertTrue(flights.SellModal().isNoThanksLinkVisible());
 
 
 
