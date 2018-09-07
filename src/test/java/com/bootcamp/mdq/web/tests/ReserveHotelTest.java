@@ -23,17 +23,15 @@ public class ReserveHotelTest extends BaseTestSuite {
 
     @Test
     public void reserveHotelCreditCardTest(){
-        HotelResult result = home.header().clickHotel()
+        HotelDetail hotelDetail = home.header().clickHotel()
                 .destination("Miami Beach")
                 .checkIn().selectDaysAhead(3).clickHotelDate()
                 .checkOut().selectDaysAhead(10).clickHotelDate()
                 .rooms(1)
-                .adults(4)
-                .childs(1)
-                .childsAge(7)
-                .search();
-
-        HotelDetail hotel = result.selectHotelCard(0).clickHotelName();
+                .adults(1)
+                .search()
+                .selectHotelCard(0)
+                .clickHotelName();
 
     }
 }
