@@ -30,9 +30,9 @@ public class FlightCard extends WebComponent {
 
     public FlightResult selectFlight(){
         click(selectButton);
-        if(isVisible(selectThisFareButton).isDisplayed()){
+        /*if(isVisible(selectThisFareButton).isDisplayed()){
             click(selectThisFareButton);
-        }
+        }*/
         return new FlightResult();
     }
 

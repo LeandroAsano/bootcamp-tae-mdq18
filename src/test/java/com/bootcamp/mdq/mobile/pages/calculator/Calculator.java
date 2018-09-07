@@ -56,18 +56,17 @@ public class Calculator extends MobilePage {
     }
 
     /*
-    I CAN'T USE "MOBILE COMPONENTS BECAUSE 'initElements(new AppiumFieldDecorator(container), this);' DOESN'T WORK
+    public CalculatorPadNumeric pad(){return new CalculatorPadNumeric(calculatorPadNumeric);}
 
-    public CalculatorPadNumeric enterNumber(){return new CalculatorPadNumeric(calculatorPadNumeric);}
-
-    public CalculatorPadOperators enterOperator(){
+    public CalculatorPadOperators operator(){
         return new CalculatorPadOperators(calculatorPadOperators);
     }
 
-    public CalculatorDisplay readDisplay(){
+    public CalculatorDisplay read(){
         return new CalculatorDisplay(calculatorDisplay);
     }
     */
+
     @CacheLookup
     @AndroidFindBy(id = "digit_1")
     private MobileElement digit1;

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
@@ -45,6 +47,10 @@ public final class Waits {
 
   public static boolean waitUntilInivisible(WebElement webElement){
     return waiting().until(invisibilityOf(webElement));
+  }
+
+  public static List<WebElement> waitUntilListVisible(List<WebElement> elements) {
+    return waiting().until(visibilityOfAllElements(elements));
   }
 
   private static WebDriverWait waiting() {

@@ -1,6 +1,7 @@
 package com.bootcamp.mdq.web.pages.hotels;
 
 import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.waits.Waits;
 import com.bootcamp.mdq.web.pages.components.HotelCard;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -9,6 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 import static com.bootcamp.mdq.waits.Waits.waitUntilInivisible;
+import static com.bootcamp.mdq.waits.Waits.waitUntilListVisible;
 
 public class HotelResult extends WebPage {
 
@@ -39,6 +41,7 @@ public class HotelResult extends WebPage {
     }
 
     public HotelCard selectHotelCard(int position){
+        waitUntilListVisible(hotelList);
         return new HotelCard(hotelList.get(position));
     }
 

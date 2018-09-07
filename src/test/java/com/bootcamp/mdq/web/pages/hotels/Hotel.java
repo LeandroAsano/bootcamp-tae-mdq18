@@ -1,6 +1,7 @@
 package com.bootcamp.mdq.web.pages.hotels;
 
 import com.bootcamp.mdq.page.web.WebPage;
+import com.bootcamp.mdq.web.pages.components.DatePicker;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -17,6 +18,12 @@ public class Hotel extends WebPage {
 
     @FindBy(id = "hotel-checkout-hlp")
     private WebElement checkoutDate;
+
+    @FindBy(id = "hotel-checkin-wrapper-hlp")
+    private WebElement checkinDateCalendar;
+
+    @FindBy(id = "hotel-checkout-wrapper-hlp")
+    private WebElement checkoutDateCalendar;
 
     @FindBy(id = "hotel-rooms-hlp")
     private WebElement roomsSelect;
@@ -38,17 +45,19 @@ public class Hotel extends WebPage {
         return this;
     }
 
-    public Hotel checkIn(int daysAhead){
+    public DatePicker checkIn(){
         //BONUS to do: create the component DatePicker, and click the date on the calendar
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        type(checkinDate,(LocalDate.now().plusDays(daysAhead).format(format)));
-        return this;
+        //DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        //type(checkinDate,(LocalDate.now().plusDays(daysAhead).format(format)));
+        click(checkinDate);
+        return new DatePicker(checkinDateCalendar);
     }
 
-    public Hotel checkOut(int daysAhead){
-        DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        type(checkoutDate,(LocalDate.now().plusDays(daysAhead).format(format)));
-        return this;
+    public DatePicker checkOut(){
+        //DateTimeFormatter format = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        //type(checkoutDate,(LocalDate.now().plusDays(daysAhead).format(format)));
+        click(checkoutDate);
+        return new DatePicker(checkoutDateCalendar);
     }
 
     public Hotel rooms(int rooms){

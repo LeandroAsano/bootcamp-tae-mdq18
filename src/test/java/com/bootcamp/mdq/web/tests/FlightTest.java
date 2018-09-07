@@ -20,19 +20,22 @@ public class FlightTest extends BaseTestSuite {
         home = new Home();
     }
 
-    /*@Test
+    @Test
     public void searchFlightTest(){
-        FlightResult result = home.header().clickFlight().searchFlight()
+        FlightResult result = home.header().clickFlight()
                 .enterOrigin("LAS")
                 .enterDestination("LAX")
-                .enterCheckIn().setDate(3)
-                .enterCheckOut().setDate(10)
+                .enterCheckIn()
+                .selectDaysAhead(3)
+                .clickFlightDate()
+                .enterCheckOut()
+                .selectDaysAhead(10)
+                .clickFlightDate()
                 .selectAdults(1)
                 .search()
                 .getResultList()
                 .selectCard(0)
                 .selectFlight()
-        //Assert.assertTrue(result.getTitleCitySpanText().contains("Select your return"));
                 .getResultList()
                 .selectCard(0)
                 .selectFlight();
@@ -40,5 +43,5 @@ public class FlightTest extends BaseTestSuite {
         assertTrue(result.hotelSellModal().isNoThanksLinkVisible());
 
 
-    }*/
+    }
 }
