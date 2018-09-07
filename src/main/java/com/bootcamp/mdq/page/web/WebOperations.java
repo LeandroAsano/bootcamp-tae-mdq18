@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import static com.bootcamp.mdq.driver.Drivers.getDriver;
 import static com.bootcamp.mdq.waits.Waits.isClickable;
 import static com.bootcamp.mdq.waits.Waits.isTextPresent;
+import static com.bootcamp.mdq.waits.Waits.isVisible;
 
 public abstract class WebOperations extends CommonOperations {
 
@@ -34,7 +35,7 @@ public abstract class WebOperations extends CommonOperations {
    * @param text       the text
    */
   protected boolean type(WebElement webElement, String text) {
-    isClickable(webElement).sendKeys(text);
+    webElement.sendKeys(text);
     return isTextPresent(webElement, text);
   }
 
@@ -45,7 +46,11 @@ public abstract class WebOperations extends CommonOperations {
    * @param text       the text to select
    */
   protected void selectByText(WebElement webElement, String text) {
-    select(isClickable(webElement)).selectByVisibleText(text);
+    select(webElement).selectByVisibleText(text);
+  }
+
+  protected boolean isDisplayed(WebElement element) {
+    return isDisplayed(element);
   }
 
   private Select select(WebElement webElement) {

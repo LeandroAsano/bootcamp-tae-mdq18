@@ -24,6 +24,10 @@ public abstract class CommonOperations {
     isClickable(webElement).click();
   }
 
+  protected void clickSearch(WebElement webElement) {
+    isVisible(webElement).click();
+  }
+
   /**
    * Gets the text from the web element.
    *
