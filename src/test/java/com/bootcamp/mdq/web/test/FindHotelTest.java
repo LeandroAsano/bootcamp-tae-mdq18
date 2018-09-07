@@ -27,7 +27,7 @@ public class FindHotelTest extends BaseTestSuite {
                 .findHotels()
                 .setDestination("Miami Beach")
                 .closeSuggestDestinationDropdown()
-                .setChekinByCalendar()
+                .setCheckinByCalendar()
                 .selectMonth(11)
                 .selectDay(23)
                 .setCheckoutByCalendar()

@@ -30,7 +30,7 @@ public class Hotels extends WebPage {
     private WebElement adultsSelect;
 
     @FindBy(id = "hotel-1-children-hlp")
-    private WebElement childrensSelect;
+    private WebElement childrenSelect;
 
     @FindBy(id = "hotel-1-age-select-1-hlp")
     private WebElement child1AgeSelect;
@@ -54,7 +54,7 @@ public class Hotels extends WebPage {
         return this;
     }
 
-    public DatePicker setChekinByCalendar() {
+    public DatePicker setCheckinByCalendar() {
         click(checkInDateInput);
         return datePicker;
     }
@@ -75,7 +75,7 @@ public class Hotels extends WebPage {
     }
 
     public Hotels selectNumberChildrens(String value) {
-        selectDropdown(childrensSelect, value);
+        selectDropdown(childrenSelect, value);
         return this;
     }
 
