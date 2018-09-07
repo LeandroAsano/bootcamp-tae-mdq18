@@ -24,19 +24,16 @@ public class CreateContactPage extends MobilePage {
     private MobileElement saveButton;
 
     public CreateContactPage typeContactName(String name) {
-//        click(nameEditText);
         type(nameEditText, name);
         return this;
     }
 
     public CreateContactPage typePhoneNumber(String phoneNumber) {
-//        click(phoneEditText);
         type(phoneEditText, phoneNumber);
         return this;
     }
 
     public CreateContactPage typeEmail(String email) {
-//        click(emailEditText);
         type(emailEditText, email);
         return this;
     }
