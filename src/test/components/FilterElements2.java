@@ -14,7 +14,7 @@ import java.util.List;
 public class FilterElements2 {
 
 
-    /* NO ENCONTRE EL SELECTOR DE LA LISTA DE IPHONES */ 
+    /* NO ENCONTRE EL SELECTOR DE LA LISTA DE IPHONES */
     @FindBy(className = "s-item-container")
     private List<WebElement> dropDownlistCategories;
 
