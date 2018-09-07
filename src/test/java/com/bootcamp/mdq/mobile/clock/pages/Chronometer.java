@@ -57,9 +57,7 @@ public class Chronometer extends MobilePage {
         return this;
     }
 
-    public String getTimeOverChronometer(){
-        return getText(chronometerText);
-    }
+
 
 
 

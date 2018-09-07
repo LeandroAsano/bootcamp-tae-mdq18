@@ -3,6 +3,7 @@ package com.bootcamp.mdq.mobile.contacts;
 import com.bootcamp.mdq.mobile.contacts.pages.ContactInfo;
 import com.bootcamp.mdq.mobile.contacts.pages.Contacts;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class ContactsTest extends BaseTestSuite {
@@ -19,5 +20,12 @@ public class ContactsTest extends BaseTestSuite {
                 .typeEmail("marcoscasas@gmail.com")
                 .clickOnSave()
                 .clickOnKeppLocal();
+
+
+
+        Assert.assertEquals("Marcos Casas", contactInfo.getName());
+        Assert.assertEquals("223 155521603", contactInfo.getName());
+        Assert.assertEquals("marcoscasas@gmail.com", contactInfo.getEmail());
+
     }
 }
