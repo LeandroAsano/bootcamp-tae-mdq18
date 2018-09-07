@@ -7,14 +7,17 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalTime;
 
 public class Chronometer extends MobilePage {
 
     @CacheLookup
     @AndroidFindBy (accessibility = "Start")
     private MobileElement startButton;
+
+    @CacheLookup
+    @AndroidFindBy (accessibility = "Stop")
+    private MobileElement stopButton;
 
     @AndroidFindBy (id = "stopwatch_time")
     private MobileElement chronometer;
@@ -33,8 +36,13 @@ public class Chronometer extends MobilePage {
     public Chronometer() {
     }
 
-    public Chronometer Start_stop(){
+    public Chronometer start(){
         click(startButton);
+        return this;
+    }
+
+    public Chronometer stop(){
+        click(stopButton);
         return this;
     }
 
@@ -43,13 +51,10 @@ public class Chronometer extends MobilePage {
         return this;
     }
 
-    public Chronometer wait(int miliseconds){
-        try {
-            Thread.sleep(miliseconds);
-        } catch (InterruptedException e) {
-            e.toString();
-        }
-        Start_stop();
+    public Chronometer waitUntil(long seconds){
+        LocalTime expected = LocalTime.now().plusSeconds(seconds);
+        while (LocalTime.now().compareTo(expected) != 1) {}
+        stop();
         return this;
     }
 
