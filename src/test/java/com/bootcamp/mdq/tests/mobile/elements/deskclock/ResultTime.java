@@ -6,6 +6,7 @@ import com.sun.xml.internal.fastinfoset.util.CharArray;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * Created by Yo on 6/9/2018.
  */
 public class ResultTime extends MobilePage {
-
+    @CacheLookup
     @AndroidFindBy(id = "stopwatch_time_text")
     private MobileElement chrometerResult;
 
