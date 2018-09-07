@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.testsuite;
 
+import com.bootcamp.mdq.page.CommonOperations;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,7 +19,7 @@ import static junit.framework.Assert.fail;
  * BaseTestSuite represents the base suite for all the test suites in the test automation project.
  * A new suite should inherit BaseTestSuite functionality.
  */
-public abstract class BaseTestSuite {
+public abstract class BaseTestSuite extends CommonOperations {
 
   @BeforeClass
   public static void suiteSetUp() {
@@ -35,7 +36,7 @@ public abstract class BaseTestSuite {
   }
 
   @Before
-  public void testSetUp() {
+  public void testSetUp() throws MalformedURLException {
     try {
       populateDriver(TEST_PROPERTIES.getPlatform(), TEST_PROPERTIES.getBrowser());
     } catch (MalformedURLException e) {
