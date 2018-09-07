@@ -15,6 +15,12 @@ public class Contacts extends MobilePage {
     @AndroidFindBy(id = "import_contacts_button")
     private MobileElement importButton;
 
+    @AndroidFindBy(id ="floating_action_button_container")
+    private MobileElement addContactButton;
 
+    public OptionSave createNewContact(){
+        click(addContactButton);
+        return new OptionSave();
+    }
 
 }
