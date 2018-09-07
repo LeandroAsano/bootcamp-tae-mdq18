@@ -67,4 +67,5 @@ public abstract class WebOperations extends CommonOperations {
         getDriver().getWebDriver().switchTo().window(windows.get(window - 1));
     }
 
+
 }

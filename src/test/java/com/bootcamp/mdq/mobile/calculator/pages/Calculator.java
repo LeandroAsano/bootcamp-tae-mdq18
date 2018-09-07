@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.mobile.tests.calculator.pages;
+package com.bootcamp.mdq.mobile.calculator.pages;
 
 import com.bootcamp.mdq.page.mobile.MobilePage;
 import io.appium.java_client.MobileElement;

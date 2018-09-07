@@ -1,7 +1,7 @@
-package com.bootcamp.mdq.mobile.tests.contacts;
+package com.bootcamp.mdq.mobile.contacts;
 
-import com.bootcamp.mdq.mobile.tests.contacts.pages.ContactInfo;
-import com.bootcamp.mdq.mobile.tests.contacts.pages.Contacts;
+import com.bootcamp.mdq.mobile.contacts.pages.ContactInfo;
+import com.bootcamp.mdq.mobile.contacts.pages.Contacts;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Test;
 

@@ -3,6 +3,7 @@ package com.bootcamp.mdq.web.pages.flights;
 import com.bootcamp.mdq.page.web.WebPage;
 import com.bootcamp.mdq.web.pages.components.DatePicker;
 import com.bootcamp.mdq.web.pages.hotel.Hotels;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -25,8 +26,11 @@ public class Flights extends WebPage {
     @FindBy(css = "btn-primary.btn-action.gcw-submit")
     private WebElement searchButton;
 
+    @FindBy (id="flight-tabs")
+    private WebElement flightContainer;
 
-    public Flights(){
+    public Flights()
+    {
         super();
     }
 
@@ -70,7 +74,7 @@ public class Flights extends WebPage {
     }
 
     public FlightsResults clickOnSearch(){
-        click(searchButton);
+        click( flightContainer.findElement(By.className("gcw-submit")));
         return new FlightsResults();
     }
     

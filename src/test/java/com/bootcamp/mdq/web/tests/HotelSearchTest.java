@@ -1,4 +1,4 @@
-package com.bootcamp.mdq.web.tests.hotel;
+package com.bootcamp.mdq.web.tests;
 
 
 import com.bootcamp.mdq.web.pages.Home;

@@ -1,6 +1,6 @@
-package com.bootcamp.mdq.mobile.tests.calculator;
+package com.bootcamp.mdq.mobile.calculator;
 
-import com.bootcamp.mdq.mobile.tests.calculator.pages.Calculator;
+import com.bootcamp.mdq.mobile.calculator.pages.Calculator;
 import com.bootcamp.mdq.testsuite.BaseTestSuite;
 import org.junit.Assert;
 import org.junit.Test;
