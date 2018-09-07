@@ -45,11 +45,13 @@ public abstract class WebOperations extends CommonOperations {
    * @param text       the text to select
    */
   protected void selectByText(WebElement webElement, String text) {
-    select(isClickable(webElement)).selectByVisibleText(text);
+    select(webElement).selectByVisibleText(text);
   }
+
 
   private Select select(WebElement webElement) {
     return new Select(webElement);
   }
+
 
 }
