@@ -1,5 +1,6 @@
 package com.bootcamp.mdq.testsuite;
 
+import com.bootcamp.mdq.logger.Loggeable;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,30 +13,32 @@ import static com.bootcamp.mdq.driver.Drivers.populateDriver;
 import static com.bootcamp.mdq.platform.Platform.WEB;
 import static com.bootcamp.mdq.properties.TestProperties.TEST_PROPERTIES;
 import static com.bootcamp.mdq.server.SeleniumStandaloneServer.SERVER;
+import static java.lang.String.format;
 import static junit.framework.Assert.fail;
+import static org.junit.Assert.assertEquals;
 
 /**
  * BaseTestSuite represents the base suite for all the test suites in the test automation project.
  * A new suite should inherit BaseTestSuite functionality.
  */
-public abstract class BaseTestSuite {
+public abstract class BaseTestSuite implements Loggeable {
 
   @BeforeClass
-  public static void suiteSetUp() {
+  public static void beforeClass() {
     if (WEB.equals(TEST_PROPERTIES.getPlatform())) {
       SERVER.start();
     }
   }
 
   @AfterClass
-  public static void suiteTearDown() {
+  public static void afterClass() {
     if (WEB.equals(TEST_PROPERTIES.getPlatform())) {
       SERVER.stop();
     }
   }
 
   @Before
-  public void testSetUp() {
+  public void before() {
     try {
       populateDriver(TEST_PROPERTIES.getPlatform(), TEST_PROPERTIES.getBrowser());
     } catch (MalformedURLException e) {
@@ -44,8 +47,18 @@ public abstract class BaseTestSuite {
   }
 
   @After
-  public void testTearDown() {
+  public void after() {
     dispose();
+  }
+
+  /**
+   * Checks for the equality of two Strings.
+   *
+   * @param expected the expected String
+   * @param actual   the actual String
+   */
+  protected void checkEquals(String expected, String actual) {
+    assertEquals(format("Error: Expected '%s', but was '%s'", expected, actual), expected, actual);
   }
 
 }

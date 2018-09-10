@@ -9,12 +9,12 @@ public abstract class WebComponent extends WebOperations {
 
   private WebElement container;
 
-  public WebComponent(WebElement container) {
+  protected WebComponent(WebElement container) {
     this.container = container;
     initElements(new DefaultElementLocatorFactory(container), this);
   }
 
-  public WebElement getContainer() {
+  protected WebElement getContainer() {
     return container;
   }
 }
